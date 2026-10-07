@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>年収の壁 手取りシミュレーター【2026年版】178万・130万・106万</title>
+<meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年版の年収の壁(106万・130万・178万)に対応した無料シミュレーター。">
+<meta property="og:title" content="年収の壁 手取りシミュレーター【2026年版】">
+<meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<!-- 公開後に追加: <link rel="canonical" href="サイトのURL"> / <meta property="og:url" content="サイトのURL"> / <meta property="og:image" content="画像のURL(1200×630px)"> -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"106万円の壁とは?","acceptedAnswer":{"@type":"Answer","text":"勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。"}},
+{"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}}]}
+</script>
+<style>
+:root{--bg:#f2f5f7;--cd:#fff;--ink:#1b2733;--mut:#64727f;--ln:#d9e1e7;--ac:#0f766e;--acb:#e1f2ef;--wn:#c2410c;--wnb:#fdece3}
+@media(prefers-color-scheme:dark){:root{--bg:#10171d;--cd:#18222b;--ink:#e8eef2;--mut:#93a3b0;--ln:#2a3a46;--ac:#4fd1c0;--acb:#173a37;--wn:#ff9a62;--wnb:#3a2417}}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:16px 14px 40px}
+h1{font-size:1.35rem;line-height:1.4;margin:6px 0 4px}h1 small{font-size:.8rem;color:var(--ac);margin-left:6px}
+h2{font-size:1rem;margin:0 0 10px}
+.lead{margin:0 0 14px;color:var(--mut);font-size:.9rem}
+.card{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+label{display:block;font-size:.85rem;color:var(--mut);margin:12px 0 5px}
+.row{display:flex;align-items:center;gap:8px}
+input[type=number]{width:130px;font:inherit;font-size:1.4rem;font-weight:700;padding:6px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--ac);margin:8px 0 0}
+.seg{display:flex;gap:6px}
+.seg button,.chip,#reset{font:inherit;font-size:.9rem;border:1px solid var(--ln);background:var(--cd);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+.seg button{flex:1}.seg button.on,.chip.on{background:var(--ac);border-color:var(--ac);color:#fff}
+@media(prefers-color-scheme:dark){.seg button.on,.chip.on{color:#06201d}}
+#reset{padding:6px 12px;font-size:.85rem}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+summary{cursor:pointer;font-weight:600}
+.srow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;font-size:.85rem}
+.srow input{width:110px;font:inherit;padding:5px 8px;border:1px solid var(--ln);border-radius:6px;background:var(--bg);color:var(--ink);text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{padding:5px 10px;font-size:.82rem}
+.big{font-size:2rem;font-weight:800;line-height:1.2}.mut{color:var(--mut);font-size:.85rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.b{font-size:.78rem;padding:2px 9px;border-radius:99px;background:var(--acb);color:var(--ac)}.b.w{background:var(--wnb);color:var(--wn)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+td,th{padding:7px 4px;border-bottom:1px solid var(--ln);text-align:right}th{color:var(--mut);font-weight:500}td:first-child,th:first-child{text-align:left}
+tr.t td{font-weight:700;border-bottom:0}tr.dn td{background:var(--wnb)}
+.sc{overflow-x:auto}
+.wall{padding:9px 0;border-bottom:1px solid var(--ln)}.wall:last-child{border:0}.wall.dim{opacity:.45}
+.wall b{display:block}.wall span{font-size:.82rem;color:var(--mut)}.wall em{font-style:normal;font-weight:700;color:var(--ac)}.wall em.o{color:var(--wn)}
+svg{width:100%;height:auto}.ln{fill:none;stroke:var(--ac);stroke-width:2.5}.wl{stroke:var(--mut);stroke-dasharray:3 3;opacity:.7}.ax{stroke:var(--ln)}
+svg text{fill:var(--mut);font-size:10px}
+.note{font-size:.76rem;color:var(--mut);line-height:1.6}
+.gl details{border-bottom:1px solid var(--ln);padding:8px 0}.gl details:last-child{border:0}
+.gl summary{font-weight:600;font-size:.95rem}.gl p{margin:6px 0 2px;font-size:.88rem;color:var(--mut)}
+.hr{margin-top:12px;padding-top:4px;border-top:1px solid var(--ln)}.hr .srow input{width:90px}
+#h_btn{font:inherit;font-size:.88rem;border:1px solid var(--ac);background:var(--acb);color:var(--ac);border-radius:8px;padding:6px 12px;cursor:pointer;margin-top:10px}
+.sg{font-size:.92rem;margin:20px 0 2px;color:var(--ac)}
+.si{padding:2px 0 10px;border-bottom:1px dashed var(--ln)}
+.sd{margin:4px 0 0;font-size:.78rem;color:var(--mut);line-height:1.55}
+.rs{font:inherit;font-size:.76rem;border:0;background:none;color:var(--ac);padding:4px 0 0;cursor:pointer;text-decoration:underline}
+.ad-box{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;overflow-x:auto}
+.ad-box:empty{display:none}
+.ad-box::before{content:"PR・" attr(data-title);display:block;font-size:.8rem;color:var(--mut);margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>年収の壁 手取りシミュレーター<small>2026年版</small></h1>
+<p class="lead">年収を入れるだけで、手取りと「損する年収帯」がわかります。</p>
+
+<section class="card">
+ <div class="top"><b>あなたの条件</b><button id="reset" type="button">リセット</button></div>
+ <label for="inc">年収(給与収入)</label>
+ <div class="row"><input type="number" id="inc" min="0" max="400" step="1" inputmode="decimal"><b>万円</b></div>
+ <input type="range" id="incr" min="0" max="400" step="1" aria-label="年収スライダー">
+ <label>配偶者の扶養に入っている</label>
+ <div class="seg" data-k="fuyo"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ</button></div>
+ <label>勤務先は社会保険の加入対象<br>(従業員51人以上・週20時間以上など。週20時間未満なら「いいえ」)</label>
+ <div class="seg" data-k="shaho"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ・わからない</button></div>
+ <details class="hr"><summary>時給から年収を計算する</summary>
+  <div class="srow"><label for="h_w" style="margin:0">時給(円)</label><input type="number" id="h_w" value="1200" step="10" inputmode="decimal"></div>
+  <div class="srow"><label for="h_t" style="margin:0">1週間の勤務時間</label><input type="number" id="h_t" value="20" step="1" inputmode="decimal"></div>
+  <div class="srow"><label for="h_m" style="margin:0">1年で働く月数</label><input type="number" id="h_m" value="12" step="1" min="1" max="12" inputmode="decimal"></div>
+  <p class="mut" style="margin:10px 0 0">年収の目安:<b id="h_r"></b></p>
+  <button type="button" id="h_btn">この年収で計算する</button>
+ </details>
+</section>
+
+<details class="card"><summary>詳細設定(数字を変える)</summary><div id="set"></div></details>
+<section class="card"><b>表示する項目</b><p class="mut" style="margin:2px 0 8px">いらない項目はタップで非表示にできます。</p><div class="chips" id="chips"></div></section>
+
+<section class="card" id="s-sum"><h2>手取りの目安</h2><div id="v-sum"></div></section>
+<section class="card" id="s-detail"><h2>内訳</h2><div id="v-detail"></div></section>
+<section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
+<section class="card" id="s-chart"><h2>年収と手取りのグラフ</h2><div id="v-chart"></div></section>
+<section class="card" id="s-be"><h2>損する区間と、元に戻る年収</h2><div id="v-be"></div></section>
+<!-- 広告枠1:結果の直後。A8のタグを、下のdivの中にそのまま貼る(JS経由にしない)。空の間は自動で非表示 -->
+<div class="ad-box" data-title="働き方を見直したい方へ"></div>
+
+<section class="card" id="s-table"><h2>年収別の早見表</h2><div class="sc" id="v-table"></div></section>
+
+<section class="card gl" id="s-gloss"><h2>用語集(タップで開きます)</h2>
+<details><summary>扶養(ふよう)とは?</summary><p>配偶者などの収入で生計を立てているとみなされる状態です。税金の扶養(配偶者控除など)と社会保険の扶養は別の制度で、基準になる年収も違います。</p></details>
+<details><summary>106万円の壁とは?</summary><p>勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。月額賃金8.8万円以上という年収の条件は、2026年10月に撤廃されました。今後は、週20時間以上・従業員51人以上(人数は2027年10月から段階的に引き下げの予定)などの条件を満たすと、年収にかかわらず加入対象になります。詳しくは勤務先か公式情報で確認してください。</p></details>
+<details><summary>130万円の壁とは?</summary><p>配偶者の健康保険の扶養から外れる目安です。外れると、国民健康保険・国民年金を自分で払うか、勤務先の社会保険に入ります。交通費を含めた収入で判定されるのが一般的です。</p></details>
+<details><summary>178万円の壁(課税最低限)とは?</summary><p>所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。</p></details>
+<details><summary>社会保険料とは?</summary><p>健康保険・厚生年金・雇用保険などの保険料です。会社員は会社と折半で払います。支払った分は、病気のときの保障や将来の年金につながります。</p></details>
+<details><summary>国民健康保険・国民年金とは?</summary><p>会社の社会保険に入らない人が、自治体や国に自分で払う保険料です。扶養を外れて勤務先の社会保険にも入らない場合は、この2つを払います。</p></details>
+<details><summary>給与所得控除とは?</summary><p>会社員の仕事にかかる経費にあたるものとして、収入から自動的に差し引かれる金額です。差し引いた後の金額をもとに税金が決まります。</p></details>
+<details><summary>基礎控除とは?</summary><p>誰でも収入から差し引ける金額です。給与所得控除と合わせて、税金がかからない部分をつくります。</p></details>
+<details><summary>所得税と住民税のちがいは?</summary><p>所得税は国に、住民税は住んでいる自治体に払う税金です。住民税は前の年の収入をもとに計算され、翌年に払うのが一般的です。</p></details>
+<details><summary>家族手当(配偶者手当)とは?</summary><p>会社が配偶者のいる社員に支給する手当です。もらえる配偶者の年収の上限は会社ごとに違うので、勤務先の規定を確認してください。</p></details>
+<details><summary>手取りとは?</summary><p>年収から社会保険料と税金を引いた、実際に使えるお金です。このツールでは「年収 − 社会保険料 − 所得税 − 住民税」で計算しています。</p></details>
+</section>
+
+<!-- 広告枠2:ページ下部。使わなければ空のままで非表示 -->
+<div class="ad-box" data-title="家計の見直しに"></div>
+
+<p class="note">※概算です。所得税・住民税は給与所得者の単純計算で、配偶者控除・配偶者特別控除、各種控除、自治体ごとの差は含みません。社会保険料は料率の目安で計算しています。制度は変わることがあるため、最新の情報は国税庁・厚生労働省などの公式情報で確認してください。(2026年10月時点の制度をもとに作成)</p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1}};
+const SET=[
+{t:'ふつうは触らなくてOK',s:'制度が変わったときや、お住まいの自治体に合わせたいときだけ変えてください。',i:[
+['kiso','基礎控除(万円)',1,'誰でも引ける控除です。大きくすると税金が減り、手取りが増えます。「178万円の壁」の数字もこれと連動して変わります。'],
+['kyuyo','給与所得控除の最低額(万円)',1,'会社員が最低限引ける控除です。基礎控除と合わせて、所得税がかかり始める年収が決まります。'],
+['juminLine','住民税がかかり始める年収(万円)',1,'この年収以下なら住民税を0円として計算します。自治体で基準が違うので、お住まいの自治体に合わせて変えられます。']]},
+{t:'勤務先に合わせて変える',s:'あなたや配偶者の勤務先の規定が違うときに変えてください。',i:[
+['w130','扶養の上限(万円)',1,'この年収以上で、配偶者の扶養から外れる計算になります(勤務先が社保の対象外の場合)。'],
+['allow','配偶者の家族手当(月額・円)',1000,'配偶者の会社からもらう家族手当の月額です。0なら計算に入りません。入れると、手当が消える年収の前後で世帯の手取りが減る様子が見えます。'],
+['allowLim','家族手当がもらえる年収の上限(万円)',1,'この年収を超えると家族手当がもらえなくなる計算です。会社によって103万円・130万円など違うので、配偶者の会社の規定に合わせてください。']]},
+{t:'精度を上げたい人向け',s:'給与明細や自治体の情報がわかる場合に変えてください。',i:[
+['rate','社会保険料率(勤務先の社保に入る場合・%)',.1,'年収の何%を保険料として引くかです。上げると手取りが減ります。給与明細の(健康保険+厚生年金+雇用保険)÷総支給額で確かめられます。'],
+['nenkin','国民年金(年額・万円)',.1,'社保に入らず扶養からも外れた場合の、国民年金の年額です。上げると手取りが減ります。'],
+['kokuho','国民健康保険(年収比・%)',.1,'同じ場合の、国民健康保険を年収の何%として引くかの目安です。自治体で大きく違うので、お住まいの自治体の試算で確かめられます。']]}];
+const NAMES={sum:'手取りの目安',detail:'内訳',wall:'壁チェック',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集'};
+const KEY='nenshu-kabe-v1';
+let F,S,SH;
+const cl=o=>JSON.parse(JSON.stringify(o));
+const yen=n=>Math.round(n).toLocaleString('ja-JP')+'円';
+function load(){F=cl(D.F);S=cl(D.S);SH=cl(D.show);try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.show)Object.assign(SH,j.show)}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({show:SH}))}catch(e){}}
+
+function kyu(y){const m=S.kyuyo*1e4;let f;if(y<=3.6e6)f=y*.3+8e4;else if(y<=6.6e6)f=y*.2+44e4;else if(y<=8.5e6)f=y*.1+110e4;else f=195e4;return Math.min(y,Math.max(m,f))}
+function ins(y){if(y<=0)return 0;
+ if(F.shaho)return Math.floor(y*S.rate/100);
+ if(F.fuyo&&y<S.w130*1e4)return 0;return Math.floor(S.nenkin*1e4+y*S.kokuho/100)}
+function tax(y,sh){const t=Math.max(0,y-kyu(y)-S.kiso*1e4-sh);
+ for(const[l,r,d]of[[1.95e6,.05,0],[3.3e6,.1,97500],[6.95e6,.2,427500],[9e6,.23,636000],[1.8e7,.33,1536000],[4e7,.4,2796000],[Infinity,.45,4796000]])
+  if(t<=l)return Math.floor((t*r-d)*1.021);return 0}
+function res(y,sh){if(y<=S.juminLine*1e4)return 0;return Math.floor(Math.max(0,y-kyu(y)-43e4-sh)*.1)+5000}
+function calc(y){const sh=ins(y),it=tax(y,sh),rs=res(y,sh),net=y-sh-it-rs;
+ const al=(F.fuyo&&y<=S.allowLim*1e4)?S.allow*12:0;return{y,sh,it,rs,net,al,house:net+al}}
+const H=y=>calc(y).house;
+
+function walls(){return[
+ {t:'106万円の壁:2026年10月から、年収の条件はなくなりました',d:F.shaho?'勤務先が対象(週20時間以上・従業員51人以上など)なので、年収にかかわらず社会保険に入る計算です。':'勤務先が社会保険の対象外の場合は関係しません。',rel:!!F.shaho},
+ {v:S.w130,d:'配偶者の扶養から外れ、国保・国民年金を自分で払う',rel:!F.shaho&&F.fuyo},
+ {v:S.kiso+S.kyuyo,d:'所得税がかかり始める',rel:true}]}
+
+function rSum(c){const p=c.y>0?Math.round(c.net/c.y*1000)/10:0;
+ let b='';
+ b+=c.sh===0?'<span class="b">社会保険料:自己負担なし</span>':(F.shaho?'<span class="b w">勤務先の社会保険に加入</span>':'<span class="b w">国保・国民年金を自己負担</span>');
+ b+=c.it===0?'<span class="b">所得税:かからない</span>':'<span class="b w">所得税:かかる</span>';
+ return `<div class="big">${yen(c.net)}</div><div class="mut">年間の手取り(月あたり約${yen(c.net/12)}・手取り率${p}%)</div>`+(c.al?`<p style="margin:8px 0 0">家族手当を足した世帯の手取り:<b>${yen(c.house)}</b></p>`:'')+`<div class="badges">${b}</div>`}
+function rDetail(c){const r=(a,b,cls='')=>`<tr class="${cls}"><td>${a}</td><td>${b}</td></tr>`;
+ return '<table>'+r('年収',yen(c.y))+r('社会保険料','−'+yen(c.sh))+r('所得税','−'+yen(c.it))+r('住民税','−'+yen(c.rs))+r('手取り',yen(c.net),'t')+(c.al?r('家族手当(年額)','+'+yen(c.al)):'')+'</table>'}
+function rWall(){return walls().map(w=>{if(w.t)return `<div class="wall${w.rel?'':' dim'}"><b>${w.t}</b><span>${w.d}</span></div>`;const d=w.v-F.inc;
+ const s=w.rel?(d>0?`<em>あと${d}万円</em>で到達`:`<em class="o">超えています(+${-d}万円)</em>`):'あなたの条件では関係ありません';
+ return `<div class="wall${w.rel?'':' dim'}"><b>${w.v}万円の壁:${s}</b><span>${w.d}</span></div>`}).join('')}
+function rChart(){const W=360,Ht=210,L=46,R=10,T=14,B=26,x0=50,x1=300,ys=[];
+ for(let x=x0;x<=x1;x+=2)ys.push([x,H(x*1e4)/1e4]);
+ const mx=Math.max(...ys.map(a=>a[1])),mn=Math.min(...ys.map(a=>a[1])),sx=x=>L+(x-x0)/(x1-x0)*(W-L-R),sy=y=>T+(1-(y-mn)/(mx-mn||1))*(Ht-T-B);
+ let s=`<svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="年収と手取りのグラフ">`;
+ s+=`<line class="ax" x1="${L}" y1="${Ht-B}" x2="${W-R}" y2="${Ht-B}"/>`;
+ for(let x=x0;x<=x1;x+=50)s+=`<text x="${sx(x)}" y="${Ht-10}" text-anchor="middle">${x}</text>`;
+ [mn,(mn+mx)/2,mx].forEach(v=>s+=`<text x="${L-4}" y="${sy(v)+3}" text-anchor="end">${Math.round(v)}</text>`);
+ walls().filter(w=>w.rel&&w.v>=x0&&w.v<=x1).forEach(w=>s+=`<line class="wl" x1="${sx(w.v)}" y1="${T}" x2="${sx(w.v)}" y2="${Ht-B}"/><text x="${sx(w.v)}" y="${T-3}" text-anchor="middle">${w.v}</text>`);
+ s+=`<path class="ln" d="${ys.map((a,i)=>(i?'L':'M')+sx(a[0]).toFixed(1)+' '+sy(a[1]).toFixed(1)).join('')}"/>`;
+ if(F.inc>=x0&&F.inc<=x1)s+=`<circle cx="${sx(F.inc)}" cy="${sy(H(F.inc*1e4)/1e4)}" r="5" fill="var(--wn)"/>`;
+ return s+'</svg><p class="mut" style="margin:4px 0 0">横軸:年収(万円)/縦軸:手取り(万円)。点があなたの年収です。</p>'}
+function rBe(){const out=[];for(let x=50;x<400;x++){const a=H(x*1e4),b=H((x+1)*1e4);
+  if(b<a-1000){let q=x+1;while(q<400&&H(q*1e4)<a)q++;out.push([x,q]);x=q}}
+ if(!out.length)return '<p style="margin:0">この条件では、年収を増やして手取りが減る区間はありません。</p>';
+ return out.slice(0,3).map(([p,q])=>`<p style="margin:0 0 8px">年収<b>${p}万円</b>を超えると手取りが減り、<b>${q>=400?'400万円以上':q+'万円'}</b>まで働いてやっと元に戻ります。</p>`).join('')}
+function rTable(){let prev=null;const rows=[80,100,106,110,120,130,140,150,160,178,200,250,300].map(v=>{const c=calc(v*1e4),dn=prev!==null&&c.house<prev;prev=c.house;
+ return `<tr class="${dn?'dn':''}"><td>${v}万円${dn?' ↓':''}</td><td>${Math.round(c.sh/1e3)/10}万</td><td>${Math.round((c.it+c.rs)/1e3)/10}万</td><td>${Math.round(c.net/1e3)/10}万</td></tr>`}).join('');
+ return `<table><tr><th>年収</th><th>社会保険料</th><th>税金</th><th>手取り</th></tr>${rows}</table><p class="mut" style="margin:6px 0 0">色つきの行(↓)は、前の行より手取りが減る年収です。</p>`}
+
+function render(){const c=calc(F.inc*1e4);
+ $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall();
+ $('v-chart').innerHTML=rChart();$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
+ for(const k in NAMES)$('s-'+k).hidden=!SH[k]}
+function sync(){$('inc').value=F.inc;$('incr').value=F.inc;
+ document.querySelectorAll('.seg').forEach(g=>g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===F[g.dataset.k])));
+ $('set').innerHTML='<p class="mut" style="margin:10px 0 0">迷ったら、このままで大丈夫です。</p>'+SET.map(g=>`<h3 class="sg">${g.t}</h3><p class="mut" style="margin:0 0 4px;font-size:.8rem">${g.s}</p>`+g.i.map(([k,l,st,d])=>`<div class="si"><div class="srow"><label for="s_${k}" style="margin:0">${l}</label><input type="number" id="s_${k}" data-k="${k}" step="${st}" value="${S[k]}" inputmode="decimal"></div><p class="sd">${d}</p><button type="button" class="rs" data-k="${k}">初期値(${D.S[k]})に戻す</button></div>`).join('')).join('');
+ $('set').querySelectorAll('input').forEach(i=>i.oninput=()=>{S[i.dataset.k]=parseFloat(i.value)||0;render()});
+ $('set').querySelectorAll('.rs').forEach(b=>b.onclick=()=>{const k=b.dataset.k;S[k]=D.S[k];$('s_'+k).value=S[k];render()});
+ $('chips').innerHTML=Object.keys(NAMES).map(k=>`<button type="button" class="chip${SH[k]?' on':''}" data-k="${k}" aria-pressed="${!!SH[k]}">${NAMES[k]}</button>`).join('');
+ $('chips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{SH[b.dataset.k]=SH[b.dataset.k]?0:1;b.classList.toggle('on');b.setAttribute('aria-pressed',!!SH[b.dataset.k]);save();render()})}
+function setInc(v){F.inc=Math.min(400,Math.max(0,parseFloat(v)||0));render()}
+$('inc').oninput=e=>{setInc(e.target.value);$('incr').value=F.inc};
+$('incr').oninput=e=>{setInc(e.target.value);$('inc').value=F.inc};
+document.querySelectorAll('.seg').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(!b)return;F[g.dataset.k]=+b.dataset.v;sync();render()});
+$('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync();render()};
+function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').value)||0,m=Math.min(12,parseFloat($('h_m').value)||0);
+ const y=Math.round(w*t*52/12*m/1e4*10)/10;$('h_r').textContent=y+'万円';return y}
+['h_w','h_t','h_m'].forEach(i=>$(i).oninput=hourly);
+$('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
+hourly();
+
+load();sync();render();
+</script>
+</body>
+</html>
