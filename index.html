@@ -20,7 +20,6 @@
 <!-- 構造化データ -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-
 {"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}}]}
 </script>
 <style>
@@ -104,6 +103,7 @@ svg text{fill:var(--mut);font-size:10px}
 <section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
 <section class="card" id="s-chart"><h2>年収と手取りのグラフ</h2><div id="v-chart"></div></section>
 <section class="card" id="s-be"><h2>損する区間と、元に戻る年収</h2><div id="v-be"></div></section>
+
 <!-- 広告枠1:結果の直後。A8のタグを、下のdivの中にそのまま貼る(JS経由にしない)。空の間は自動で非表示 -->
 <div class="ad-box" data-title="働き方を見直したい方へ"></div>
 
@@ -130,7 +130,7 @@ svg text{fill:var(--mut);font-size:10px}
 </div>
 
 <script>
-// 即時関数(IIFE)で囲み、グローバル変数の汚染を防ぐ（他のスクリプトとの競合防止）
+// 即時関数(IIFE)で囲み、グローバル変数の汚染を防ぐ
 (()=>{
 const $=id=>document.getElementById(id);
 const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1}};
@@ -217,8 +217,8 @@ $('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync()
 function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').value)\vert{}\vert{}0,m=Math.min(12,parseFloat($('h_m').value)||0);
  const y=Math.round(w*t*52/12*m/1e4*10)/10;$('h_r').textContent=y+'万円';return y}
 ['h_w','h_t','h_m'].forEach(i=>$(i).oninput=hourly);$('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
-hourly();
 
+hourly();
 load();sync();render();
 })();
 </script>
