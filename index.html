@@ -5,19 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>年収の壁 手取りシミュレーター【2026年最新版】178万・130万の壁対応</title>
 <meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年10月以降の最新制度(社会保険の賃金要件撤廃・178万円の壁)に対応した無料シミュレーター。">
-
-<!-- OGP設定 -->
 <meta property="og:title" content="年収の壁 手取りシミュレーター【2026年最新版】">
 <meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。2026年10月の社会保険の変更にも対応。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-
-<!-- 正規URLと画像の絶対パス指定 -->
 <link rel="canonical" href="https://zero-kobo.github.io/nenshu-kabe-simulator/">
 <meta property="og:url" content="https://zero-kobo.github.io/nenshu-kabe-simulator/">
 <meta property="og:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
-
-<!-- 構造化データ -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}}]}
@@ -103,7 +97,6 @@ svg text{fill:var(--mut);font-size:10px}
 <section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
 <section class="card" id="s-chart"><h2>年収と手取りのグラフ</h2><div id="v-chart"></div></section>
 <section class="card" id="s-be"><h2>損する区間と、元に戻る年収</h2><div id="v-be"></div></section>
-
 <!-- 広告枠1:結果の直後。A8のタグを、下のdivの中にそのまま貼る(JS経由にしない)。空の間は自動で非表示 -->
 <div class="ad-box" data-title="働き方を見直したい方へ"></div>
 
@@ -215,8 +208,8 @@ $('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync()
 function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').value)\vert{}\vert{}0,m=Math.min(12,parseFloat($('h_m').value)||0);
  const y=Math.round(w*t*52/12*m/1e4*10)/10;$('h_r').textContent=y+'万円';return y}
 ['h_w','h_t','h_m'].forEach(i=>$(i).oninput=hourly);$('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
-
 hourly();
+
 load();sync();render();
 </script>
 </body>
