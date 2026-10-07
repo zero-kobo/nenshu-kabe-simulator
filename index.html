@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>年収の壁 手取りシミュレーター【2026年最新版】178万・130万の壁対応</title>
-<meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年10月以降の最新制度(社会保険の賃金要件撤廃・178万円の壁)に対応した無料シミュレーター。">
-<meta property="og:title" content="年収の壁 手取りシミュレーター【2026年最新版】">
-<meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。2026年10月の社会保険の変更にも対応。">
+<title>年収の壁 手取りシミュレーター【2026年版】178万・130万・106万</title>
+<meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年版の年収の壁(106万・130万・178万)に対応した無料シミュレーター。">
+<meta property="og:title" content="年収の壁 手取りシミュレーター【2026年版】">
+<meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://zero-kobo.github.io/nenshu-kabe-simulator/">
-<meta property="og:url" content="https://zero-kobo.github.io/nenshu-kabe-simulator/">
-<meta property="og:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
+<!-- 公開後に追加: <link rel="canonical" href="サイトのURL"> / <meta property="og:url" content="サイトのURL"> / <meta property="og:image" content="画像のURL(1200×630px)"> -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"106万円の壁とは?","acceptedAnswer":{"@type":"Answer","text":"勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。"}},
 {"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}}]}
 </script>
 <style>
@@ -68,7 +67,7 @@ svg text{fill:var(--mut);font-size:10px}
 </head>
 <body>
 <div class="wrap">
-<h1>年収の壁 手取りシミュレーター<small>2026年10月最新版</small></h1>
+<h1>年収の壁 手取りシミュレーター<small>2026年版</small></h1>
 <p class="lead">年収を入れるだけで、手取りと「損する年収帯」がわかります。</p>
 
 <section class="card">
@@ -193,21 +192,25 @@ function rTable(){let prev=null;const rows=[80,100,106,110,120,130,140,150,160,1
  return `<table><tr><th>年収</th><th>社会保険料</th><th>税金</th><th>手取り</th></tr>${rows}</table><p class="mut" style="margin:6px 0 0">色つきの行(↓)は、前の行より手取りが減る年収です。</p>`}
 
 function render(){const c=calc(F.inc*1e4);
- $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall();$('v-chart').innerHTML=rChart();$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
+ $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall();
+ $('v-chart').innerHTML=rChart();$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
  for(const k in NAMES)$('s-'+k).hidden=!SH[k]}
 function sync(){$('inc').value=F.inc;$('incr').value=F.inc;
  document.querySelectorAll('.seg').forEach(g=>g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===F[g.dataset.k])));
  $('set').innerHTML='<p class="mut" style="margin:10px 0 0">迷ったら、このままで大丈夫です。</p>'+SET.map(g=>`<h3 class="sg">${g.t}</h3><p class="mut" style="margin:0 0 4px;font-size:.8rem">${g.s}</p>`+g.i.map(([k,l,st,d])=>`<div class="si"><div class="srow"><label for="s_${k}" style="margin:0">${l}</label><input type="number" id="s_${k}" data-k="${k}" step="${st}" value="${S[k]}" inputmode="decimal"></div><p class="sd">${d}</p><button type="button" class="rs" data-k="${k}">初期値(${D.S[k]})に戻す</button></div>`).join('')).join('');
- $('set').querySelectorAll('input').forEach(i=>i.oninput=()=>{S[i.dataset.k]=parseFloat(i.value)\vert{}\vert{}0;render()});$('set').querySelectorAll('.rs').forEach(b=>b.onclick=()=>{const k=b.dataset.k;S[k]=D.S[k];$('s_'+k).value=S[k];render()});$('chips').innerHTML=Object.keys(NAMES).map(k=>`<button type="button" class="chip${SH[k]?' on':''}" data-k="${k}" aria-pressed="${!!SH[k]}">${NAMES[k]}</button>`).join('');
+ $('set').querySelectorAll('input').forEach(i=>i.oninput=()=>{S[i.dataset.k]=parseFloat(i.value)||0;render()});
+ $('set').querySelectorAll('.rs').forEach(b=>b.onclick=()=>{const k=b.dataset.k;S[k]=D.S[k];$('s_'+k).value=S[k];render()});
+ $('chips').innerHTML=Object.keys(NAMES).map(k=>`<button type="button" class="chip${SH[k]?' on':''}" data-k="${k}" aria-pressed="${!!SH[k]}">${NAMES[k]}</button>`).join('');
  $('chips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{SH[b.dataset.k]=SH[b.dataset.k]?0:1;b.classList.toggle('on');b.setAttribute('aria-pressed',!!SH[b.dataset.k]);save();render()})}
 function setInc(v){F.inc=Math.min(400,Math.max(0,parseFloat(v)||0));render()}
 $('inc').oninput=e=>{setInc(e.target.value);$('incr').value=F.inc};
 $('incr').oninput=e=>{setInc(e.target.value);$('inc').value=F.inc};
 document.querySelectorAll('.seg').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(!b)return;F[g.dataset.k]=+b.dataset.v;sync();render()});
 $('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync();render()};
-function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').value)\vert{}\vert{}0,m=Math.min(12,parseFloat($('h_m').value)||0);
+function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').value)||0,m=Math.min(12,parseFloat($('h_m').value)||0);
  const y=Math.round(w*t*52/12*m/1e4*10)/10;$('h_r').textContent=y+'万円';return y}
-['h_w','h_t','h_m'].forEach(i=>$(i).oninput=hourly);$('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
+['h_w','h_t','h_m'].forEach(i=>$(i).oninput=hourly);
+$('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
 hourly();
 
 load();sync();render();
