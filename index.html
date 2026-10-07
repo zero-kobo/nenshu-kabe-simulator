@@ -130,8 +130,6 @@ svg text{fill:var(--mut);font-size:10px}
 </div>
 
 <script>
-// 即時関数(IIFE)で囲み、グローバル変数の汚染を防ぐ
-(()=>{
 const $=id=>document.getElementById(id);
 const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1}};
 const SET=[
@@ -220,7 +218,6 @@ function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').va
 
 hourly();
 load();sync();render();
-})();
 </script>
 </body>
 </html>
