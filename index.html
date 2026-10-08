@@ -9,7 +9,18 @@
 <meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<!-- 公開後に追加: <link rel="canonical" href="サイトのURL"> / <meta property="og:url" content="サイトのURL"> / <meta property="og:image" content="画像のURL(1200×630px)"> -->
+<link rel="canonical" href="https://zero-kobo.github.io/nenshu-kabe-simulator/">
+<meta property="og:url" content="https://zero-kobo.github.io/nenshu-kabe-simulator/">
+<meta property="og:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
+<meta property="og:site_name" content="年収の壁 手取りシミュレーター">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:title" content="年収の壁 手取りシミュレーター【2026年版】">
+<meta name="twitter:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。">
+<meta name="twitter:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%B4%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"年収の壁 手取りシミュレーター","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"106万円の壁とは?","acceptedAnswer":{"@type":"Answer","text":"勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。"}},
@@ -60,6 +71,9 @@ svg text{fill:var(--mut);font-size:10px}
 .si{padding:2px 0 10px;border-bottom:1px dashed var(--ln)}
 .sd{margin:4px 0 0;font-size:.78rem;color:var(--mut);line-height:1.55}
 .rs{font:inherit;font-size:.76rem;border:0;background:none;color:var(--ac);padding:4px 0 0;cursor:pointer;text-decoration:underline}
+.sh{display:flex;flex-wrap:wrap;gap:8px}
+.sh a,.sh button{font:inherit;font-size:.88rem;text-decoration:none;border:1px solid var(--ln);background:var(--cd);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer}
+.sh a:focus-visible,.sh button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 .ad-box{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;overflow-x:auto}
 .ad-box:empty{display:none}
 .ad-box::before{content:"PR・" attr(data-title);display:block;font-size:.8rem;color:var(--mut);margin-bottom:8px}
@@ -101,6 +115,8 @@ svg text{fill:var(--mut);font-size:10px}
 
 <section class="card" id="s-table"><h2>年収別の早見表</h2><div class="sc" id="v-table"></div></section>
 
+<section class="card" id="s-share"><h2>このツールをシェア</h2><div class="sh" id="sh"></div><p class="mut" style="margin:8px 0 0">共有されるのはツールのURLだけです。入力した年収などは含まれません。</p></section>
+
 <section class="card gl" id="s-gloss"><h2>用語集(タップで開きます)</h2>
 <details><summary>扶養(ふよう)とは?</summary><p>配偶者などの収入で生計を立てているとみなされる状態です。税金の扶養(配偶者控除など)と社会保険の扶養は別の制度で、基準になる年収も違います。</p></details>
 <details><summary>106万円の壁とは?</summary><p>勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。月額賃金8.8万円以上という年収の条件は、2026年10月に撤廃されました。今後は、週20時間以上・従業員51人以上(人数は2027年10月から段階的に引き下げの予定)などの条件を満たすと、年収にかかわらず加入対象になります。詳しくは勤務先か公式情報で確認してください。</p></details>
@@ -123,7 +139,7 @@ svg text{fill:var(--mut);font-size:10px}
 
 <script>
 const $=id=>document.getElementById(id);
-const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1}};
+const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1,share:1}};
 const SET=[
 {t:'ふつうは触らなくてOK',s:'制度が変わったときや、お住まいの自治体に合わせたいときだけ変えてください。',i:[
 ['kiso','基礎控除(万円)',1,'誰でも引ける控除です。大きくすると税金が減り、手取りが増えます。「178万円の壁」の数字もこれと連動して変わります。'],
@@ -137,7 +153,7 @@ const SET=[
 ['rate','社会保険料率(勤務先の社保に入る場合・%)',.1,'年収の何%を保険料として引くかです。上げると手取りが減ります。給与明細の(健康保険+厚生年金+雇用保険)÷総支給額で確かめられます。'],
 ['nenkin','国民年金(年額・万円)',.1,'社保に入らず扶養からも外れた場合の、国民年金の年額です。上げると手取りが減ります。'],
 ['kokuho','国民健康保険(年収比・%)',.1,'同じ場合の、国民健康保険を年収の何%として引くかの目安です。自治体で大きく違うので、お住まいの自治体の試算で確かめられます。']]}];
-const NAMES={sum:'手取りの目安',detail:'内訳',wall:'壁チェック',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集'};
+const NAMES={sum:'手取りの目安',detail:'内訳',wall:'壁チェック',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集',share:'シェア'};
 const KEY='nenshu-kabe-v1';
 let F,S,SH;
 const cl=o=>JSON.parse(JSON.stringify(o));
@@ -213,6 +229,14 @@ function hourly(){const w=parseFloat($('h_w').value)||0,t=parseFloat($('h_t').va
 $('h_btn').onclick=()=>{setInc(hourly());$('inc').value=F.inc;$('incr').value=F.inc;window.scrollTo({top:0,behavior:'smooth'})};
 hourly();
 
+(function(){const U='https://zero-kobo.github.io/nenshu-kabe-simulator/',T='年収の壁 手取りシミュレーター【2026年版】あなたの手取りと「損する年収帯」が1分でわかる無料ツール',e=encodeURIComponent;
+ const L=[['X','https://twitter.com/intent/tweet?text='+e(T)+'&url='+e(U)+'&hashtags='+e('年収の壁')],['LINE','https://social-plugins.line.me/lineit/share?url='+e(U)],['Threads','https://www.threads.net/intent/post?text='+e(T+' '+U)],['はてブ','https://b.hatena.ne.jp/add?mode=confirm&url='+e(U)+'&title='+e(T)],['Facebook','https://www.facebook.com/sharer/sharer.php?u='+e(U)]];
+ let h=L.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${n}</a>`).join('')+'<button type="button" id="sh_cp">リンクをコピー</button>';
+ if(navigator.share)h='<button type="button" id="sh_nv">共有メニューを開く</button>'+h;
+ $('sh').innerHTML=h;
+ $('sh_cp').onclick=async()=>{const b=$('sh_cp');try{await navigator.clipboard.writeText(U);b.textContent='コピーしました';setTimeout(()=>b.textContent='リンクをコピー',2000)}catch(x){window.prompt('このURLをコピーしてください',U)}};
+ if($('sh_nv'))$('sh_nv').onclick=()=>navigator.share({title:T,url:U}).catch(()=>{});
+})();
 load();sync();render();
 </script>
 </body>
