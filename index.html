@@ -74,6 +74,9 @@ svg text{fill:var(--mut);font-size:10px}
 .sh{display:flex;flex-wrap:wrap;gap:8px}
 .sh a,.sh button{font:inherit;font-size:.88rem;text-decoration:none;border:1px solid var(--ln);background:var(--cd);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer}
 .sh a:focus-visible,.sh button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.ab p{margin:6px 0;font-size:.88rem}.ab h2{margin-top:20px}.ab h2:first-child{margin-top:0}
+.ab dl{display:grid;grid-template-columns:7em 1fr;gap:6px 8px;font-size:.88rem;margin:0}.ab dt{color:var(--mut)}.ab dd{margin:0}
+.ab a{color:var(--ac)}.ab ul{margin:6px 0 2px;padding-left:1.3em;font-size:.86rem;color:var(--mut)}.ab li{margin:4px 0}
 .ad-box{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;overflow-x:auto}
 .ad-box:empty{display:none}
 .ad-box::before{content:"PR・" attr(data-title);display:block;font-size:.8rem;color:var(--mut);margin-bottom:8px}
@@ -120,6 +123,18 @@ svg text{fill:var(--mut);font-size:10px}
 
 <section class="card" id="s-share"><h2>このツールをシェア</h2><div class="sh" id="sh"></div><p class="mut" style="margin:8px 0 0">共有されるのはツールのURLだけです。入力した年収などは含まれません。</p></section>
 
+<section class="card ab" id="about"><h2>このツールについて</h2>
+<p>年収の壁(106万円・130万円・178万円)を越えると、税金や社会保険料の負担がどう変わり、手取りがいくらになるかを試算できる無料のシミュレーターです。年収と、配偶者の扶養に入っているか、勤務先が社会保険の対象かを選ぶだけで、手取りの目安と内訳、手取りが減る年収帯、元に戻る年収がわかります。パートやアルバイトで、働く時間をどこまで増やすか迷っている方の判断材料にしてください。</p>
+<p>入力した年収などは、サーバーに送られることも、保存されることもありません。計算はお使いのブラウザの中だけで行われます。</p>
+<h2>計算の前提</h2>
+<ul>
+<li>2026年10月時点の制度をもとにした、給与所得者の概算です。</li>
+<li>勤務先の社会保険に入る場合の保険料は、年収の15%を目安にしています。</li>
+<li>扶養を外れて社会保険に入らない場合は、国民年金(年21.5万円)と、国民健康保険(年収の7%)を目安にしています。</li>
+<li>配偶者控除・配偶者特別控除、自治体ごとの違いは含みません。</li>
+<li>これらの数字は、「詳細設定」で変えられます。</li>
+</ul></section>
+
 <section class="card gl" id="s-gloss"><h2>用語集(タップで開きます)</h2>
 <details><summary>扶養(ふよう)とは?</summary><p>配偶者などの収入で生計を立てているとみなされる状態です。税金の扶養(配偶者控除など)と社会保険の扶養は別の制度で、基準になる年収も違います。</p></details>
 <details><summary>106万円の壁とは?</summary><p>勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。月額賃金8.8万円以上という年収の条件は、2026年10月に撤廃されました。今後は、週20時間以上・従業員51人以上(人数は2027年10月から段階的に引き下げの予定)などの条件を満たすと、年収にかかわらず加入対象になります。詳しくは勤務先か公式情報で確認してください。</p></details>
@@ -136,6 +151,32 @@ svg text{fill:var(--mut);font-size:10px}
 
 <!-- 広告枠2:ページ下部。使わなければ空のままで非表示 -->
 <div class="ad-box" data-title="家計の見直しに"></div>
+
+<footer class="card ab" id="operator">
+<h2>運営者情報</h2>
+<dl>
+<dt>運営者</dt><dd>ちいさなツール工房</dd>
+<dt>お問い合わせ</dt><dd>不具合やご意見は、<a href="https://note.com/zero_kobo/n/n4566e0057e39" target="_blank" rel="noopener noreferrer">解説記事(note)</a>のコメント欄にお寄せください。</dd>
+<dt>運営者のnote</dt><dd><a href="https://note.com/zero_kobo" target="_blank" rel="noopener noreferrer">note.com/zero_kobo</a></dd>
+<dt>最終更新</dt><dd>2026年10月11日</dd>
+</dl>
+
+<h2>広告について</h2>
+<p>当サイトは、アフィリエイトプログラム(A8.netなど)による広告を掲載することがあります。広告を掲載する場合は「PR」と表示します。紹介する商品やサービスは、内容を確認したうえで選びます。</p>
+
+<h2>プライバシーポリシー</h2>
+<ul>
+<li>入力した年収・条件などは、外部に送信せず、保存もしません。</li>
+<li>お使いの端末(ブラウザ)には、「表示する項目」の選択だけを保存します。ブラウザの設定から削除できます。</li>
+<li>アクセス解析に、Googleアナリティクス(GA4)を使っています。ページの閲覧数や、端末・おおよその地域などの利用状況を、Cookieを使って集めます。個人を特定する情報は集めません。入力した年収などの内容も、送りません。集めた情報は、<a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener noreferrer">Googleのポリシー</a>に従って扱われます。停止したい場合は、ブラウザの設定でCookieを無効にするか、<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener noreferrer">オプトアウト用のアドオン</a>を使ってください。</li>
+<li>当サイトはGitHub Pagesで公開しており、アクセスの記録がGitHub側に残る場合があります。</li>
+<li>広告を掲載する場合、広告のリンク先で、広告事業者がCookieなどを使って情報を取得することがあります。取得の内容や停止の方法は、各事業者のページでご確認ください。</li>
+<li>シェアボタンは、押したときだけ、各サービス(X・LINE・Threads・はてなブックマーク・Facebook)のページに移動します。</li>
+</ul>
+
+<h2>免責事項</h2>
+<p>このツールの結果は概算で、実際の税額・保険料・手取りを保証するものではありません。制度は変わることがあります。最終的な判断は、国税庁・厚生労働省などの公式情報や、勤務先・お住まいの自治体にご確認ください。このツールを使って生じた損害について、運営者は責任を負いません。</p>
+</footer>
 
 <p class="note">※概算です。所得税・住民税は給与所得者の単純計算で、配偶者控除・配偶者特別控除、各種控除、自治体ごとの差は含みません。社会保険料は料率の目安で計算しています。制度は変わることがあるため、最新の情報は国税庁・厚生労働省などの公式情報で確認してください。(2026年10月時点の制度をもとに作成)</p>
 </div>
