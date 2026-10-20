@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>年収の壁 手取りシミュレーター【2026年版】178万・130万・106万</title>
-<meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年版の年収の壁(106万・130万・178万)に対応した無料シミュレーター。">
+<meta name="description" content="年収を入れるだけで手取りと「損する年収帯」がわかる。2026年版の年収の壁(106万・130万・178万)に対応。年末調整で戻る所得税の目安も出せる無料シミュレーター。">
 <meta property="og:title" content="年収の壁 手取りシミュレーター【2026年版】">
 <meta property="og:description" content="あなたの手取りはいくら?「損する年収帯」がグラフでわかる無料ツールです。">
 <meta property="og:type" content="website">
@@ -24,7 +24,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"106万円の壁とは?","acceptedAnswer":{"@type":"Answer","text":"勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。"}},
-{"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}}]}
+{"@type":"Question","name":"178万円の壁(課税最低限)とは?","acceptedAnswer":{"@type":"Answer","text":"所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。"}},
+{"@type":"Question","name":"2026年の年末調整で所得税が戻るのはなぜ?","acceptedAnswer":{"@type":"Answer","text":"2026年11月までの毎月の天引き(源泉徴収税額表)は、基礎控除58万円・給与所得控除の最低65万円をもとにしています。年末調整で、2026年分の基礎控除(最大104万円)と給与所得控除の最低74万円に置き換わるため、天引きされすぎた分が戻る人が多くなります。"}}]}
 </script>
 <style>
 :root{--bg:#f2f5f7;--cd:#fff;--ink:#1b2733;--mut:#64727f;--ln:#d9e1e7;--ac:#0f766e;--acb:#e1f2ef;--wn:#c2410c;--wnb:#fdece3}
@@ -113,6 +114,7 @@ svg text{fill:var(--mut);font-size:10px}
 
 <section class="card" id="s-sum"><h2>手取りの目安</h2><div id="v-sum"></div></section>
 <section class="card" id="s-detail"><h2>内訳</h2><div id="v-detail"></div></section>
+<section class="card" id="s-nencho"><h2>年末調整で戻る所得税の目安</h2><div id="v-nencho"></div></section>
 <section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
 <section class="card" id="s-chart"><h2>年収と手取りのグラフ</h2><div id="v-chart"></div></section>
 <section class="card" id="s-be"><h2>損する区間と、元に戻る年収</h2><div id="v-be"></div></section>
@@ -132,11 +134,12 @@ svg text{fill:var(--mut);font-size:10px}
 <li>勤務先の社会保険に入る場合の保険料は、年収の15%を目安にしています。</li>
 <li>扶養を外れて社会保険に入らない場合は、国民年金(年21.5万円)と、国民健康保険(年収の7%)を目安にしています。</li>
 <li>配偶者控除・配偶者特別控除、自治体ごとの違いは含みません。</li>
+<li>「年末調整で戻る所得税の目安」は、毎月の天引きを、基礎控除58万円・給与所得控除の最低65万円で1年分計算したものとして比べています。実際の天引き額は源泉徴収税額表で決まるので、ずれることがあります。</li>
 <li>これらの数字は、「詳細設定」で変えられます。</li>
 </ul></section>
 
 <section class="card gl" id="s-gloss"><h2>用語集(タップで開きます)</h2>
-<details><summary>扶養(ふよう)とは?</summary><p>配偶者などの収入で生計を立てているとみなされる状態です。税金の扶養(配偶者控除など)と社会保険の扶養は別の制度で、基準になる年収も違います。</p></details>
+<details><summary>扶養(ふよう)とは?</summary><p>配偶者などの収入で生計を立てているとみなされる状態です。税金の扶養(配偶者控除など)と社会保険の扶養は別の制度で、基準になる年収も違います。税金の扶養に入れる家族の基準は、2026年分から給与収入136万円以下(去年までは123万円以下)に上がりました。</p></details>
 <details><summary>106万円の壁とは?</summary><p>勤務先の社会保険(健康保険・厚生年金)に自分で加入する目安です。従業員51人以上などの勤務先が対象で、加入すると保険料が引かれて手取りが減ります。月額賃金8.8万円以上という年収の条件は、2026年10月に撤廃されました。今後は、週20時間以上・従業員51人以上(人数は2027年10月から段階的に引き下げの予定)などの条件を満たすと、年収にかかわらず加入対象になります。詳しくは勤務先か公式情報で確認してください。</p></details>
 <details><summary>130万円の壁とは?</summary><p>配偶者の健康保険の扶養から外れる目安です。外れると、国民健康保険・国民年金を自分で払うか、勤務先の社会保険に入ります。交通費を含めた収入で判定されるのが一般的です。</p></details>
 <details><summary>178万円の壁(課税最低限)とは?</summary><p>所得税がかかり始める年収の目安です。給与所得控除の最低額74万円と基礎控除104万円の合計で、2026年分から178万円になりました。</p></details>
@@ -146,6 +149,7 @@ svg text{fill:var(--mut);font-size:10px}
 <details><summary>基礎控除とは?</summary><p>誰でも収入から差し引ける金額です。給与所得控除と合わせて、税金がかからない部分をつくります。</p></details>
 <details><summary>所得税と住民税のちがいは?</summary><p>所得税は国に、住民税は住んでいる自治体に払う税金です。住民税は前の年の収入をもとに計算され、翌年に払うのが一般的です。</p></details>
 <details><summary>家族手当(配偶者手当)とは?</summary><p>会社が配偶者のいる社員に支給する手当です。もらえる配偶者の年収の上限は会社ごとに違うので、勤務先の規定を確認してください。</p></details>
+<details><summary>年末調整とは?</summary><p>会社が、毎月の給料から天引きした所得税を、1年分の正しい税額と比べて精算する手続きです。2026年は、毎月の天引きが去年までの控除(基礎控除58万円など)で計算されているため、年末調整で戻る人が多くなります。</p></details>
 <details><summary>手取りとは?</summary><p>年収から社会保険料と税金を引いた、実際に使えるお金です。このツールでは「年収 − 社会保険料 − 所得税 − 住民税」で計算しています。</p></details>
 </section>
 
@@ -158,7 +162,7 @@ svg text{fill:var(--mut);font-size:10px}
 <dt>運営者</dt><dd>ちいさなツール工房</dd>
 <dt>お問い合わせ</dt><dd>不具合やご意見は、<a href="https://note.com/zero_kobo/n/n4566e0057e39" target="_blank" rel="noopener noreferrer">解説記事(note)</a>のコメント欄にお寄せください。</dd>
 <dt>運営者のnote</dt><dd><a href="https://note.com/zero_kobo" target="_blank" rel="noopener noreferrer">note.com/zero_kobo</a></dd>
-<dt>最終更新</dt><dd>2026年10月11日</dd>
+<dt>最終更新</dt><dd>2026年10月20日</dd>
 </dl>
 
 <h2>広告について</h2>
@@ -183,12 +187,12 @@ svg text{fill:var(--mut);font-size:10px}
 
 <script>
 const $=id=>document.getElementById(id);
-const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:110,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,wall:1,chart:1,be:1,table:0,gloss:1,share:1}};
+const D={F:{inc:130,fuyo:1,shaho:0},S:{kiso:104,kyuyo:74,rate:15,nenkin:21.5,kokuho:7,juminLine:119,w130:130,allow:0,allowLim:130},show:{sum:1,detail:1,nencho:1,wall:1,chart:1,be:1,table:0,gloss:1,share:1}};
 const SET=[
 {t:'ふつうは触らなくてOK',s:'制度が変わったときや、お住まいの自治体に合わせたいときだけ変えてください。',i:[
 ['kiso','基礎控除(万円)',1,'誰でも引ける控除です。大きくすると税金が減り、手取りが増えます。「178万円の壁」の数字もこれと連動して変わります。'],
 ['kyuyo','給与所得控除の最低額(万円)',1,'会社員が最低限引ける控除です。基礎控除と合わせて、所得税がかかり始める年収が決まります。'],
-['juminLine','住民税がかかり始める年収(万円)',1,'この年収以下なら住民税を0円として計算します。自治体で基準が違うので、お住まいの自治体に合わせて変えられます。']]},
+['juminLine','住民税がかかり始める年収(万円)',1,'この年収以下なら住民税を0円として計算します。2026年分の収入(2027年度の住民税)は、多くの自治体で119万円が目安です。自治体で基準が違うので、お住まいの自治体に合わせて変えられます。']]},
 {t:'勤務先に合わせて変える',s:'あなたや配偶者の勤務先の規定が違うときに変えてください。',i:[
 ['w130','扶養の上限(万円)',1,'この年収以上で、配偶者の扶養から外れる計算になります(勤務先が社保の対象外の場合)。'],
 ['allow','配偶者の家族手当(月額・円)',1000,'配偶者の会社からもらう家族手当の月額です。0なら計算に入りません。入れると、手当が消える年収の前後で世帯の手取りが減る様子が見えます。'],
@@ -197,7 +201,7 @@ const SET=[
 ['rate','社会保険料率(勤務先の社保に入る場合・%)',.1,'年収の何%を保険料として引くかです。上げると手取りが減ります。給与明細の(健康保険+厚生年金+雇用保険)÷総支給額で確かめられます。'],
 ['nenkin','国民年金(年額・万円)',.1,'社保に入らず扶養からも外れた場合の、国民年金の年額です。上げると手取りが減ります。'],
 ['kokuho','国民健康保険(年収比・%)',.1,'同じ場合の、国民健康保険を年収の何%として引くかの目安です。自治体で大きく違うので、お住まいの自治体の試算で確かめられます。']]}];
-const NAMES={sum:'手取りの目安',detail:'内訳',wall:'壁チェック',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集',share:'シェア'};
+const NAMES={sum:'手取りの目安',detail:'内訳',nencho:'年末調整',wall:'壁チェック',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集',share:'シェア'};
 const KEY='nenshu-kabe-v1';
 let F,S,SH;
 const cl=o=>JSON.parse(JSON.stringify(o));
@@ -205,14 +209,17 @@ const yen=n=>Math.round(n).toLocaleString('ja-JP')+'円';
 function load(){F=cl(D.F);S=cl(D.S);SH=cl(D.show);try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.show)Object.assign(SH,j.show)}catch(e){}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({show:SH}))}catch(e){}}
 
-function kyu(y){const m=S.kyuyo*1e4;let f;if(y<=3.6e6)f=y*.3+8e4;else if(y<=6.6e6)f=y*.2+44e4;else if(y<=8.5e6)f=y*.1+110e4;else f=195e4;return Math.min(y,Math.max(m,f))}
+function kf(y){return y<=3.6e6?y*.3+8e4:y<=6.6e6?y*.2+44e4:y<=8.5e6?y*.1+110e4:195e4}
+function kyu(y){return Math.min(y,Math.max(S.kyuyo*1e4,kf(y)))}
 function ins(y){if(y<=0)return 0;
  if(F.shaho)return Math.floor(y*S.rate/100);
  if(F.fuyo&&y<S.w130*1e4)return 0;return Math.floor(S.nenkin*1e4+y*S.kokuho/100)}
-function tax(y,sh){const t=Math.max(0,y-kyu(y)-S.kiso*1e4-sh);
+function tax(y,sh){return tx(Math.max(0,y-kyu(y)-S.kiso*1e4-sh))}
+function tx(t){t=Math.floor(t/1000)*1000;
  for(const[l,r,d]of[[1.95e6,.05,0],[3.3e6,.1,97500],[6.95e6,.2,427500],[9e6,.23,636000],[1.8e7,.33,1536000],[4e7,.4,2796000],[Infinity,.45,4796000]])
   if(t<=l)return Math.floor((t*r-d)*1.021);return 0}
 function res(y,sh){if(y<=S.juminLine*1e4)return 0;return Math.floor(Math.max(0,y-kyu(y)-43e4-sh)*.1)+5000}
+function oldTax(y,sh){const k=Math.min(y,Math.max(65e4,kf(y)));return tx(Math.max(0,y-k-58e4-sh))}
 function calc(y){const sh=ins(y),it=tax(y,sh),rs=res(y,sh),net=y-sh-it-rs;
  const al=(F.fuyo&&y<=S.allowLim*1e4)?S.allow*12:0;return{y,sh,it,rs,net,al,house:net+al}}
 const H=y=>calc(y).house;
@@ -227,6 +234,9 @@ function rSum(c){const p=c.y>0?Math.round(c.net/c.y*1000)/10:0;
  b+=c.sh===0?'<span class="b">社会保険料:自己負担なし</span>':(F.shaho?'<span class="b w">勤務先の社会保険に加入</span>':'<span class="b w">国保・国民年金を自己負担</span>');
  b+=c.it===0?'<span class="b">所得税:かからない</span>':'<span class="b w">所得税:かかる</span>';
  return `<div class="big">${yen(c.net)}</div><div class="mut">年間の手取り(月あたり約${yen(c.net/12)}・手取り率${p}%)</div>`+(c.al?`<p style="margin:8px 0 0">家族手当を足した世帯の手取り:<b>${yen(c.house)}</b></p>`:'')+`<div class="badges">${b}</div>`}
+function rNencho(c){const o=oldTax(c.y,c.sh),d=Math.max(0,o-c.it);
+ if(c.y<=0||o===0)return '<p style="margin:0">この年収では、毎月の天引きの段階でも所得税はほぼかからないため、年末調整で戻る所得税はほとんどありません。</p>';
+ return `<div class="big">約${yen(Math.round(d/100)*100)}</div><div class="mut">年末調整で戻る所得税の目安(1年分)</div><table style="margin-top:10px"><tr><td>毎月の天引きの計算(1年分の目安)</td><td>${yen(o)}</td></tr><tr><td>2026年分の本当の所得税</td><td>${yen(c.it)}</td></tr><tr class="t"><td>差額(戻る目安)</td><td>${yen(d)}</td></tr></table><p class="sd">2026年11月までの毎月の天引きは、基礎控除58万円・給与所得控除の最低65万円で計算されています。年末調整で、今年の控除(基礎控除104万円・給与所得控除の最低74万円)に置き換わるので、その差が戻る目安です。扶養家族、生命保険料控除などがあると金額は変わります。戻るのは12月か1月の給料が多く、会社によって違います。</p>`}
 function rDetail(c){const r=(a,b,cls='')=>`<tr class="${cls}"><td>${a}</td><td>${b}</td></tr>`;
  return '<table>'+r('年収',yen(c.y))+r('社会保険料','−'+yen(c.sh))+r('所得税','−'+yen(c.it))+r('住民税','−'+yen(c.rs))+r('手取り',yen(c.net),'t')+(c.al?r('家族手当(年額)','+'+yen(c.al)):'')+'</table>'}
 function rWall(){return walls().map(w=>{if(w.t)return `<div class="wall${w.rel?'':' dim'}"><b>${w.t}</b><span>${w.d}</span></div>`;const d=w.v-F.inc;
@@ -252,7 +262,7 @@ function rTable(){let prev=null;const rows=[80,100,106,110,120,130,140,150,160,1
  return `<table><tr><th>年収</th><th>社会保険料</th><th>税金</th><th>手取り</th></tr>${rows}</table><p class="mut" style="margin:6px 0 0">色つきの行(↓)は、前の行より手取りが減る年収です。</p>`}
 
 function render(){const c=calc(F.inc*1e4);
- $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall();
+ $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-nencho').innerHTML=rNencho(c);$('v-wall').innerHTML=rWall();
  $('v-chart').innerHTML=rChart();$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
  for(const k in NAMES)$('s-'+k).hidden=!SH[k]}
 function sync(){$('inc').value=F.inc;$('incr').value=F.inc;
