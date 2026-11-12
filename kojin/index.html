@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>個人事業主・フリーランスの手取りシミュレーター｜扶養の壁(62万・130万)と税金・国保【2026年版】</title>
+<meta name="description" content="売上と経費を入れるだけで、個人事業主・フリーランスの手取り、所得税・住民税・国民健康保険・国民年金・個人事業税の目安がわかる無料シミュレーター。配偶者の扶養(税金は所得62万円、社会保険は130万円)を外れるライン、青色申告でいくら得かも試算できます。2026年版。">
+<meta property="og:title" content="個人事業主・フリーランスの手取りシミュレーター【2026年版】">
+<meta property="og:description" content="売上と経費を入れるだけ。手取りと、扶養を外れるライン、青色申告でいくら得かがわかります。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://zero-kobo.github.io/nenshu-kabe-simulator/kojin/">
+<meta property="og:url" content="https://zero-kobo.github.io/nenshu-kabe-simulator/kojin/">
+<meta property="og:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
+<meta property="og:site_name" content="ちいさなツール工房">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:title" content="個人事業主・フリーランスの手取りシミュレーター【2026年版】">
+<meta name="twitter:description" content="売上と経費を入れるだけ。手取りと、扶養を外れるライン、青色申告でいくら得かがわかります。">
+<meta name="twitter:image" content="https://zero-kobo.github.io/nenshu-kabe-simulator/ogp.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "個人事業主・フリーランスの手取りシミュレーター", "url": "https://zero-kobo.github.io/nenshu-kabe-simulator/kojin/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "ちいさなツール工房", "url": "https://zero-kobo.github.io/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "個人事業主は、いくらまで配偶者の扶養に入れる?", "acceptedAnswer": {"@type": "Answer", "text": "税金と社会保険で基準がちがいます。税金(配偶者控除)は、売上から経費と青色申告特別控除を引いた所得が62万円以下です。社会保険は、年間の収入が130万円未満が目安ですが、収入から何を引けるかは、配偶者の勤務先の健康保険によってちがいます。"}}, {"@type": "Question", "name": "個人事業主にも、178万円の壁はある?", "acceptedAnswer": {"@type": "Answer", "text": "ありません。178万円は、給与所得控除(最低74万円)と基礎控除(最大104万円)を足した数字で、給料をもらう人の目安です。個人事業主には給与所得控除がないので、所得(売上−経費−青色申告特別控除)が104万円を超えると、所得税がかかり始めます。"}}, {"@type": "Question", "name": "青色申告にすると、いくら得?", "acceptedAnswer": {"@type": "Answer", "text": "最大65万円を、所得から引けます。所得税・住民税だけでなく、国民健康保険料も下がります。利益(売上−経費)が240万円の人なら、あわせて年16万円ほどが目安です。このツールの「青色申告でどのくらい変わる?」で、自分の数字で確かめられます。"}}, {"@type": "Question", "name": "国民健康保険料は、いくら?", "acceptedAnswer": {"@type": "Answer", "text": "自治体によって大きくちがいます。このツールでは、(所得−43万円)×11%+5.6万円を目安にしています。「詳細設定」で、お住まいの自治体の料率に変えられます。"}}, {"@type": "Question", "name": "個人事業税は、だれにかかる?", "acceptedAnswer": {"@type": "Answer", "text": "法律で決められた業種の人で、事業の所得が年290万円を超える場合にかかります。税率は、多くの業種で5%です。文筆業など、対象にならない業種もあります。"}}, {"@type": "Question", "name": "業務委託で働いている場合も、このツールでいい?", "acceptedAnswer": {"@type": "Answer", "text": "給料ではなく、報酬(売上)として受け取っている場合は、このツールが合っています。雇用契約で給料をもらっている場合は、パート・会社員向けの「年収の壁 手取りシミュレーター」を使ってください。"}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ちいさなツール工房", "item": "https://zero-kobo.github.io/"}, {"@type": "ListItem", "position": 2, "name": "年収の壁 手取りシミュレーター", "item": "https://zero-kobo.github.io/nenshu-kabe-simulator/"}, {"@type": "ListItem", "position": 3, "name": "個人事業主・フリーランス版", "item": "https://zero-kobo.github.io/nenshu-kabe-simulator/kojin/"}]}
+</script>
+<style>
+:root{--bg:#f2f5f7;--cd:#fff;--ink:#1b2733;--mut:#64727f;--ln:#d9e1e7;--ac:#0f766e;--acb:#e1f2ef;--wn:#c2410c;--wnb:#fdece3}
+@media(prefers-color-scheme:dark){:root{--bg:#10171d;--cd:#18222b;--ink:#e8eef2;--mut:#93a3b0;--ln:#2a3a46;--ac:#4fd1c0;--acb:#173a37;--wn:#ff9a62;--wnb:#3a2417}}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:16px 14px 40px}
+h1{font-size:1.35rem;line-height:1.4;margin:6px 0 4px}h1 small{font-size:.8rem;color:var(--ac);margin-left:6px}
+h2{font-size:1rem;margin:0 0 10px}
+.lead{margin:0 0 14px;color:var(--mut);font-size:.9rem}
+.card{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+label{display:block;font-size:.85rem;color:var(--mut);margin:12px 0 5px}
+.row{display:flex;align-items:center;gap:8px}
+input[type=number]{width:130px;font:inherit;font-size:1.4rem;font-weight:700;padding:6px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--ac);margin:8px 0 0}
+.seg{display:flex;gap:6px}
+.seg button,.chip,#reset{font:inherit;font-size:.9rem;border:1px solid var(--ln);background:var(--cd);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+.seg button{flex:1}.seg button.on,.chip.on{background:var(--ac);border-color:var(--ac);color:#fff}
+@media(prefers-color-scheme:dark){.seg button.on,.chip.on{color:#06201d}}
+#reset{padding:6px 12px;font-size:.85rem}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+summary{cursor:pointer;font-weight:600}
+.srow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;font-size:.85rem}
+.srow input{width:110px;font:inherit;padding:5px 8px;border:1px solid var(--ln);border-radius:6px;background:var(--bg);color:var(--ink);text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{padding:5px 10px;font-size:.82rem}
+.big{font-size:2rem;font-weight:800;line-height:1.2}.mut{color:var(--mut);font-size:.85rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.b{font-size:.78rem;padding:2px 9px;border-radius:99px;background:var(--acb);color:var(--ac)}.b.w{background:var(--wnb);color:var(--wn)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+td,th{padding:7px 4px;border-bottom:1px solid var(--ln);text-align:right}th{color:var(--mut);font-weight:500}td:first-child,th:first-child{text-align:left}
+tr.t td{font-weight:700;border-bottom:0}tr.dn td{background:var(--wnb)}
+.sc{overflow-x:auto}
+.wall{padding:9px 0;border-bottom:1px solid var(--ln)}.wall:last-child{border:0}.wall.dim{opacity:.45}
+.wall b{display:block}.wall span{font-size:.82rem;color:var(--mut)}.wall em{font-style:normal;font-weight:700;color:var(--ac)}.wall em.o{color:var(--wn)}
+svg{width:100%;height:auto}.ln{fill:none;stroke:var(--ac);stroke-width:2.5}.wl{stroke:var(--mut);stroke-dasharray:3 3;opacity:.7}.ax{stroke:var(--ln)}
+svg text{fill:var(--mut);font-size:10px}
+.note{font-size:.76rem;color:var(--mut);line-height:1.6}
+.gl details{border-bottom:1px solid var(--ln);padding:8px 0}.gl details:last-child{border:0}
+.gl summary{font-weight:600;font-size:.95rem}.gl p{margin:6px 0 2px;font-size:.88rem;color:var(--mut)}
+.hr{margin-top:12px;padding-top:4px;border-top:1px solid var(--ln)}.hr .srow input{width:90px}
+#h_btn{font:inherit;font-size:.88rem;border:1px solid var(--ac);background:var(--acb);color:var(--ac);border-radius:8px;padding:6px 12px;cursor:pointer;margin-top:10px}
+.sg{font-size:.92rem;margin:20px 0 2px;color:var(--ac)}
+.si{padding:2px 0 10px;border-bottom:1px dashed var(--ln)}
+.sd{margin:4px 0 0;font-size:.78rem;color:var(--mut);line-height:1.55}
+.rs{font:inherit;font-size:.76rem;border:0;background:none;color:var(--ac);padding:4px 0 0;cursor:pointer;text-decoration:underline}
+.sh{display:flex;flex-wrap:wrap;gap:8px}
+.sh a,.sh button{font:inherit;font-size:.88rem;text-decoration:none;border:1px solid var(--ln);background:var(--cd);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer}
+.sh a:focus-visible,.sh button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.ab p{margin:6px 0;font-size:.88rem}.ab h2{margin-top:20px}.ab h2:first-child{margin-top:0}
+.ab dl{display:grid;grid-template-columns:7em 1fr;gap:6px 8px;font-size:.88rem;margin:0}.ab dt{color:var(--mut)}.ab dd{margin:0}
+.ab a{color:var(--ac)}.ab ul{margin:6px 0 2px;padding-left:1.3em;font-size:.86rem;color:var(--mut)}.ab li{margin:4px 0}
+.ad-box{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;overflow-x:auto}
+.ad-box:empty{display:none}
+.ad-box::before{content:"PR・" attr(data-title);display:block;font-size:.8rem;color:var(--mut);margin-bottom:8px}
+.bc{font-size:.78rem;color:var(--mut);margin:0 0 6px}.bc a{color:var(--mut)}
+select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.cmpb{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--ln);font-size:.92rem}.cmpb:last-of-type{border:0}.cmpb.on{font-weight:700;color:var(--ac)}
+.lk{display:block;border:1px solid var(--ac);background:var(--acb);color:var(--ac);border-radius:8px;padding:10px 12px;text-decoration:none;font-weight:600;font-size:.92rem;margin-top:8px}
+</style>
+<!-- Google tag (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40QSGNSQEL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-40QSGNSQEL");</script>
+</head>
+<body>
+<div class="wrap">
+<p class="bc"><a href="https://zero-kobo.github.io/">ちいさなツール工房</a> › <a href="../">年収の壁 手取りシミュレーター</a> › 個人事業主・フリーランス版</p>
+<h1>個人事業主・フリーランスの手取りシミュレーター<small>2026年版</small></h1>
+<p class="lead">売上と経費を入れるだけで、手取りと「扶養を外れるライン」がわかります。</p>
+
+<section class="card">
+ <div class="top"><b>あなたの条件</b><button id="reset" type="button">リセット</button></div>
+ <label for="uri">1年の売上(報酬の合計)</label>
+ <div class="row"><input type="number" id="uri" min="0" max="2000" step="1" inputmode="decimal"><b>万円</b></div>
+ <input type="range" id="urir" min="0" max="1200" step="1" aria-label="売上スライダー">
+ <label for="kei">1年の経費</label>
+ <div class="row"><input type="number" id="kei" min="0" max="2000" step="1" inputmode="decimal"><b>万円</b></div>
+ <input type="range" id="keir" min="0" max="600" step="1" aria-label="経費スライダー">
+ <p class="mut" style="margin:8px 0 0">利益(売上 − 経費):<b id="raw"></b></p>
+ <label for="ao">申告の方法</label>
+ <select id="ao"><option value="65">青色申告(65万円控除・e-Taxで提出)</option><option value="55">青色申告(55万円控除・紙で提出)</option><option value="10">青色申告(10万円控除・かんたんな帳簿)</option><option value="0">白色申告(控除なし)</option></select>
+ <label>配偶者の社会保険の扶養に入っている(入りたい)</label>
+ <div class="seg" data-k="fuyo"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ</button></div>
+ <label>年齢は40〜64歳(国保に介護分がかかる)</label>
+ <div class="seg" data-k="kaigo"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ</button></div>
+</section>
+
+<details class="card"><summary>詳細設定(数字を変える)</summary><div id="set"></div></details>
+<section class="card"><b>表示する項目</b><p class="mut" style="margin:2px 0 8px">いらない項目はタップで非表示にできます。</p><div class="chips" id="chips"></div></section>
+
+<section class="card" id="s-sum"><h2>手取りの目安</h2><div id="v-sum"></div></section>
+<section class="card" id="s-detail"><h2>内訳</h2><div id="v-detail"></div></section>
+<section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
+<section class="card" id="s-ao"><h2>青色申告で、どのくらい変わる?</h2><div id="v-ao"></div></section>
+<!-- 広告枠1:青色申告の比較の直後。A8のタグを、下のdivの中にそのまま貼る(JS経由にしない)。空の間は自動で非表示 -->
+<div class="ad-box" data-title="青色申告をはじめる方へ"></div>
+<section class="card" id="s-chart"><h2>利益と手取りのグラフ</h2><div id="v-chart"></div></section>
+<section class="card" id="s-be"><h2>損する区間と、元に戻る利益</h2><div id="v-be"></div></section>
+<section class="card" id="s-table"><h2>利益別の早見表</h2><div class="sc" id="v-table"></div></section>
+<!-- 広告枠2:早見表の下。空の間は自動で非表示 -->
+<div class="ad-box" data-title="確定申告の準備に"></div>
+
+<section class="card" id="s-share"><h2>このツールをシェア</h2><div class="sh" id="sh"></div><p class="mut" style="margin:8px 0 0">共有されるのはツールのURLだけです。入力した売上などは含まれません。</p></section>
+
+<section class="card ab" id="about">
+<h2>このツールについて</h2>
+<p>個人事業主・フリーランス・業務委託で働く人が、売上と経費から、手取りと税金・社会保険料の目安を試算できる無料のシミュレーターです。配偶者の扶養に入ったまま働きたい人が、どこまで働けるかを考えるときの材料にしてください。</p>
+<p>入力した売上などは、サーバーに送られることも、保存されることもありません。計算は、お使いのブラウザの中だけで行われます。</p>
+<a class="lk" href="../">パート・会社員(給料をもらう人)は、こちらのシミュレーターへ ›</a>
+<h2>パート・会社員とのちがい</h2>
+<ul>
+<li><b>178万円の壁はありません。</b>給与所得控除がないので、所得(売上 − 経費 − 青色申告特別控除)が104万円を超えると、所得税がかかり始めます。</li>
+<li><b>106万円の壁(週20時間)も関係しません。</b>勤務先の社会保険に入るしくみがないためです。</li>
+<li><b>扶養を外れたら、国民健康保険と国民年金を自分で払います。</b>会社が半分払ってくれる、ということはありません。</li>
+<li><b>経費と青色申告で、所得を小さくできます。</b>ここが、いちばん大きなちがいです。</li>
+</ul>
+<h2>計算の前提</h2>
+<ul>
+<li>2026年11月時点の制度をもとにした、事業所得だけの人の概算です。給料や年金など、ほかの収入がある場合は入っていません。</li>
+<li>所得税の基礎控除は、所得489万円以下で104万円、655万円以下で67万円、それより上は62万円で計算しています(2026年分)。</li>
+<li>国民年金は年21.5万円(2026年度の月17,920円)、国民健康保険は(所得 − 43万円)×11% + 5.6万円(上限96万円)を目安にしています。40〜64歳は介護分を足します。実際の国民健康保険料は、前の年の所得で決まり、自治体や家族の人数で大きく変わります。所得が低い世帯の軽減は入れていません。</li>
+<li>住民税は、所得45万円以下なら0円、それより上は(所得 − 43万円 − 社会保険料)×10% + 5,000円で計算しています。</li>
+<li>個人事業税は、(利益 − 290万円)×5%で計算しています。対象にならない業種の人は、「詳細設定」で0%にしてください。</li>
+<li>社会保険の扶養は、「売上 − 経費」が130万円未満かどうかで判定しています。配偶者の勤務先の健康保険によって、基準がちがいます。</li>
+<li>配偶者控除などで変わる配偶者の税金、消費税、小規模企業共済・iDeCo・生命保険料などの控除は、入っていません。</li>
+</ul>
+</section>
+
+<section class="card gl" id="s-gloss"><h2>用語集(タップで開きます)</h2>
+<details><summary>売上・経費・所得のちがいは?</summary><p>売上は、仕事で受け取ったお金の合計です。経費は、仕事のために使ったお金です。売上から経費を引いたものが利益で、そこから青色申告特別控除を引いたものが「所得」です。税金や扶養の判定は、この所得をもとにします。</p></details>
+<details><summary>青色申告特別控除とは?</summary><p>青色申告をしている人が、所得から引ける金額です。帳簿を複式簿記でつけて、e-Tax(電子申告)で出すと65万円、紙で出すと55万円、かんたんな帳簿なら10万円です。使うには、事前に税務署へ「青色申告承認申請書」を出しておく必要があります。</p></details>
+<details><summary>税金の扶養(配偶者控除)とは?</summary><p>あなたの所得が62万円以下なら、配偶者が「配偶者控除」を受けられます(2026年分から。去年までは58万円以下)。62万円を超えても、133万円以下なら「配偶者特別控除」があり、だんだん減っていきます。あなた自身の税金ではなく、配偶者の税金が変わるしくみです。</p></details>
+<details><summary>社会保険の扶養とは?</summary><p>配偶者の勤務先の健康保険に、保険料なしで入れるしくみです。国民年金も、保険料を払わずに加入している扱い(第3号被保険者)になります。年間の収入が130万円未満などが条件です。</p></details>
+<details><summary>個人事業主の「130万円」は、何で数える?</summary><p>ここが、いちばん注意がいる点です。協会けんぽなど多くの健康保険は、「売上から、仕事に直接必要な経費を引いた額」で見ます。青色申告特別控除は引けません。引ける経費の範囲はせまく、売上そのもので見る健康保険もあります。かならず、配偶者の勤務先の健康保険に確認してください。</p></details>
+<details><summary>国民健康保険・国民年金とは?</summary><p>会社の社会保険に入っていない人が、自分で払う保険料です。国民年金は、2026年度は月17,920円(年 約21.5万円)です。国民健康保険は、前の年の所得と、自治体ごとの料率で決まります。</p></details>
+<details><summary>個人事業税とは?</summary><p>都道府県に払う税金です。事業の所得が年290万円を超えた分に、3〜5%がかかります。青色申告特別控除は、この計算では引けません。対象にならない業種もあります。</p></details>
+<details><summary>消費税・インボイスとは?</summary><p>売上が1,000万円を超えると、2年後から消費税を納める義務が出てきます。インボイス(適格請求書)の登録をしている人は、売上にかかわらず納めます。このツールの手取りには、消費税は入っていません。</p></details>
+<details><summary>手取りとは?</summary><p>このツールでは、「売上 − 経費 − 国民健康保険 − 国民年金 − 所得税 − 住民税 − 個人事業税」で計算しています。経費は、実際に出ていくお金として引いています。</p></details>
+</section>
+
+<section class="card gl" id="s-faq"><h2>よくある質問</h2>
+<details><summary>個人事業主は、いくらまで配偶者の扶養に入れる?</summary><p>税金と社会保険で基準がちがいます。税金(配偶者控除)は、売上から経費と青色申告特別控除を引いた所得が62万円以下です。社会保険は、年間の収入が130万円未満が目安ですが、収入から何を引けるかは、配偶者の勤務先の健康保険によってちがいます。</p></details>
+<details><summary>個人事業主にも、178万円の壁はある?</summary><p>ありません。178万円は、給与所得控除(最低74万円)と基礎控除(最大104万円)を足した数字で、給料をもらう人の目安です。個人事業主には給与所得控除がないので、所得(売上−経費−青色申告特別控除)が104万円を超えると、所得税がかかり始めます。</p></details>
+<details><summary>青色申告にすると、いくら得?</summary><p>最大65万円を、所得から引けます。所得税・住民税だけでなく、国民健康保険料も下がります。利益(売上−経費)が240万円の人なら、あわせて年16万円ほどが目安です。このツールの「青色申告でどのくらい変わる?」で、自分の数字で確かめられます。</p></details>
+<details><summary>国民健康保険料は、いくら?</summary><p>自治体によって大きくちがいます。このツールでは、(所得−43万円)×11%+5.6万円を目安にしています。「詳細設定」で、お住まいの自治体の料率に変えられます。</p></details>
+<details><summary>個人事業税は、だれにかかる?</summary><p>法律で決められた業種の人で、事業の所得が年290万円を超える場合にかかります。税率は、多くの業種で5%です。文筆業など、対象にならない業種もあります。</p></details>
+<details><summary>業務委託で働いている場合も、このツールでいい?</summary><p>給料ではなく、報酬(売上)として受け取っている場合は、このツールが合っています。雇用契約で給料をもらっている場合は、パート・会社員向けの「年収の壁 手取りシミュレーター」を使ってください。</p></details>
+</section>
+
+<section class="card" id="s-guide"><h2>関連するページ</h2><ul style="margin:0;padding-left:1.2em;line-height:2">
+<li><a href="../" style="color:var(--ac)">年収の壁 手取りシミュレーター(パート・会社員向け)</a></li>
+<li><a href="../tedori/" style="color:var(--ac)">パートの手取り早見表</a></li>
+<li><a href="../106man/" style="color:var(--ac)">106万円の壁がなくなって、何が変わった?</a></li>
+<li><a href="../../furusato-limit/" style="color:var(--ac)">ふるさと納税 上限額シミュレーター</a></li>
+</ul></section>
+
+<footer class="card ab" id="operator">
+<h2>運営者情報</h2>
+<dl>
+<dt>運営者</dt><dd>ちいさなツール工房</dd>
+<dt>お問い合わせ</dt><dd>不具合やご意見は、<a href="https://note.com/zero_kobo/n/n4566e0057e39" target="_blank" rel="noopener noreferrer">解説記事(note)</a>のコメント欄にお寄せください。</dd>
+<dt>運営者のnote</dt><dd><a href="https://note.com/zero_kobo" target="_blank" rel="noopener noreferrer">note.com/zero_kobo</a></dd>
+<dt>最終更新</dt><dd>2026年11月13日</dd>
+</dl>
+
+<h2>広告について</h2>
+<p>当サイトは、アフィリエイトプログラム(A8.netなど)による広告を掲載することがあります。広告を掲載する場合は「PR」と表示します。紹介する商品やサービスは、内容を確認したうえで選びます。</p>
+
+<h2>プライバシーポリシー</h2>
+<ul>
+<li>入力した売上・経費などは、外部に送信せず、保存もしません。</li>
+<li>お使いの端末(ブラウザ)には、「表示する項目」の選択だけを保存します。ブラウザの設定から削除できます。</li>
+<li>アクセス解析に、Googleアナリティクス(GA4)を使っています。ページの閲覧数や、端末・おおよその地域などの利用状況を、Cookieを使って集めます。個人を特定する情報は集めません。入力した売上などの内容も、送りません。集めた情報は、<a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener noreferrer">Googleのポリシー</a>に従って扱われます。停止したい場合は、ブラウザの設定でCookieを無効にするか、<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener noreferrer">オプトアウト用のアドオン</a>を使ってください。</li>
+<li>当サイトはGitHub Pagesで公開しており、アクセスの記録がGitHub側に残る場合があります。</li>
+<li>広告を掲載する場合、広告のリンク先で、広告事業者がCookieなどを使って情報を取得することがあります。取得の内容や停止の方法は、各事業者のページでご確認ください。</li>
+<li>シェアボタンは、押したときだけ、各サービス(X・LINE・Threads・はてなブックマーク・Facebook)のページに移動します。</li>
+</ul>
+
+<h2>免責事項</h2>
+<p>このツールの結果は概算で、実際の税額・保険料・手取りを保証するものではありません。制度は変わることがあります。最終的な判断は、国税庁・日本年金機構などの公式情報や、税務署・お住まいの自治体・配偶者の勤務先の健康保険にご確認ください。このツールを使って生じた損害について、運営者は責任を負いません。</p>
+</footer>
+
+<p class="note">※概算です。事業所得だけの人の単純計算で、各種の控除、自治体ごとの差、国民健康保険の軽減などは含みません。制度は変わることがあるため、最新の情報は国税庁・日本年金機構・お住まいの自治体などの公式情報で確認してください。(2026年11月時点の制度をもとに作成)</p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const D={F:{uri:300,kei:60,ao:65,fuyo:0,kaigo:0},S:{nenkin:21.5,kRate:11,kFlat:5.6,kCap:96,gRate:2.5,gFlat:1.6,gCap:17,juminLine:45,w130:130,gross:0,jRate:5},show:{sum:1,detail:1,wall:1,ao:1,chart:1,be:1,table:0,gloss:1,faq:1,share:1}};
+const SET=[
+{t:'お住まいの自治体に合わせる',s:'国民健康保険料は、自治体で大きくちがいます。自治体のサイトの料率に合わせると、精度が上がります。',i:[
+['kRate','国民健康保険の所得割(%)',.01,'所得から43万円を引いた額にかける率です。医療分・支援金分・子ども分の合計を入れます。'],
+['kFlat','国民健康保険の均等割など(年額・万円)',.1,'所得に関係なくかかる金額です。1人分の均等割と、世帯ごとの平等割の合計を入れます。'],
+['kCap','国民健康保険の上限(年額・万円)',1,'これ以上は増えない金額です。2026年度は、医療分67万円+支援金分26万円+子ども分3万円の合計96万円が目安です。'],
+['gRate','介護分の所得割(%)',.01,'40〜64歳の人にかかる分です。'],
+['gFlat','介護分の均等割(年額・万円)',.1,'40〜64歳の人にかかる分です。'],
+['gCap','介護分の上限(年額・万円)',1,'2026年度は17万円が目安です。'],
+['juminLine','住民税がかからない所得の上限(万円)',1,'この所得以下なら、住民税を0円として計算します。多くの自治体で45万円です。']]},
+{t:'扶養の判定を変える',s:'配偶者の勤務先の健康保険に合わせて変えてください。',i:[
+['w130','社会保険の扶養の上限(万円)',1,'この金額以上で、扶養から外れる計算になります。'],
+['gross','扶養の判定を「売上」で見る(1=はい、0=いいえ)',1,'0なら「売上−経費」で、1なら「売上」そのもので、130万円を判定します。経費を認めない健康保険の場合は、1にしてください。']]},
+{t:'業種に合わせる',s:'個人事業税がかからない業種の人は、0にしてください。',i:[
+['jRate','個人事業税の税率(%)',1,'多くの業種で5%です。対象にならない業種(文筆業など)は0にします。'],
+['nenkin','国民年金(年額・万円)',.1,'2026年度は月17,920円、年 約21.5万円です。']]}];
+const NAMES={sum:'手取りの目安',detail:'内訳',wall:'壁チェック',ao:'青色申告の効果',chart:'グラフ',be:'損する区間',table:'早見表',gloss:'用語集',faq:'よくある質問',share:'シェア'};
+const KEY='kojin-tedori-v1';
+let F,S,SH;
+const cl=o=>JSON.parse(JSON.stringify(o));
+const yen=n=>Math.round(n).toLocaleString('ja-JP')+'円';
+const man=n=>(Math.round(n/1e3)/10).toLocaleString('ja-JP')+'万';
+function load(){F=cl(D.F);S=cl(D.S);SH=cl(D.show);try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.show)Object.assign(SH,j.show)}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({show:SH}))}catch(e){}}
+
+/* ---- 計算(金額はすべて円) ---- */
+function tx(t){t=Math.floor(Math.max(0,t)/1000)*1000;
+ for(const[l,r,d]of[[1.95e6,.05,0],[3.3e6,.1,97500],[6.95e6,.2,427500],[9e6,.23,636000],[1.8e7,.33,1536000],[4e7,.4,2796000],[Infinity,.45,4796000]])
+  if(t<=l)return Math.floor((t*r-d)*1.021);return 0}
+const kiso=s=>s<=489e4?104e4:s<=655e4?67e4:s<=2350e4?62e4:s<=2400e4?48e4:s<=2450e4?32e4:s<=2500e4?16e4:0;
+// uri:売上 kei:経費 ao:青色申告特別控除(円) o:{fuyo,kaigo}
+function calc(uri,kei,ao,o){o=o||F;
+ const raw=Math.max(0,uri-kei),aoU=Math.min(ao,raw),sho=raw-aoU;
+ const base=S.gross?uri:raw,inF=!!o.fuyo&&base<S.w130*1e4;
+ let nk=0,kh=0;
+ if(!inF){nk=S.nenkin*1e4;const b=Math.max(0,sho-43e4);
+  kh=Math.min(S.kCap*1e4,b*S.kRate/100+S.kFlat*1e4);
+  if(o.kaigo)kh+=Math.min(S.gCap*1e4,b*S.gRate/100+S.gFlat*1e4);kh=Math.floor(kh)}
+ const sh=nk+kh,it=tx(sho-kiso(sho)-sh);
+ const rs=sho<=S.juminLine*1e4?0:Math.floor(Math.max(0,sho-43e4-sh)*.1)+5000;
+ const jg=Math.floor(Math.max(0,raw-290e4)*S.jRate/100);
+ return{uri,kei,raw,aoU,sho,inF,nk,kh,sh,it,rs,jg,net:raw-sh-it-rs-jg}}
+const cur=()=>calc(F.uri*1e4,F.kei*1e4,F.ao*1e4);
+// 利益(raw)だけを動かす。経費の割合は、いまの入力と同じにする
+function byRaw(raw){const r=F.uri>0?Math.min(.95,F.kei/F.uri):0,uri=raw/(1-r);return calc(uri,uri-raw,F.ao*1e4)}
+
+function rSum(c){const p=c.raw>0?Math.round(c.net/c.raw*1000)/10:0;let b='';
+ b+=c.inF?'<span class="b">社会保険:扶養の範囲内(目安)</span>':'<span class="b w">国保・国民年金を自分で払う</span>';
+ b+=c.it===0?'<span class="b">所得税:かからない</span>':'<span class="b w">所得税:かかる</span>';
+ b+=c.sho<=62e4?'<span class="b">配偶者控除の範囲内</span>':c.sho<=133e4?'<span class="b w">配偶者特別控除の範囲</span>':'';
+ if(c.raw<=0)return '<p style="margin:0">売上と経費を入れると、ここに手取りの目安が出ます。</p>';
+ return `<div class="big">${yen(c.net)}</div><div class="mut">年間の手取り(月あたり約${yen(c.net/12)}・利益に対して${p}%)</div><div class="badges">${b}</div>`+
+ (F.fuyo&&!c.inF?'<p class="sd" style="margin-top:10px">扶養の上限を超えているので、国民健康保険と国民年金を自分で払う計算です。</p>':'')}
+function rDetail(c){const r=(a,b,cls='')=>`<tr class="${cls}"><td>${a}</td><td>${b}</td></tr>`;
+ return '<table>'+r('売上',yen(c.uri))+r('経費','−'+yen(c.kei))+r('利益(売上 − 経費)',yen(c.raw),'t')+'</table><table style="margin-top:8px">'+
+ r('国民健康保険','−'+yen(c.kh))+r('国民年金','−'+yen(c.nk))+r('所得税','−'+yen(c.it))+r('住民税','−'+yen(c.rs))+r('個人事業税','−'+yen(c.jg))+r('手取り',yen(c.net),'t')+'</table>'+
+ `<p class="sd">税金の計算に使う所得:${yen(c.sho)}(利益 − 青色申告特別控除 ${yen(c.aoU)})。国民健康保険料・住民税・個人事業税は、実際には次の年に払います。</p>`}
+function rWall(c){const w=(t,d,st,rel=true)=>`<div class="wall${rel?'':' dim'}"><b>${t}${st?':'+st:''}</b><span>${d}</span></div>`;
+ const g=(lim,v)=>{const d=lim-v;return d>0?`<em>あと${Math.round(d/1e3)/10}万円</em>`:`<em class="o">超えています(+${Math.round(-d/1e3)/10}万円)</em>`};
+ const base=S.gross?c.uri:c.raw;
+ return w('住民税がかかり始める(所得'+S.juminLine+'万円)','所得がこれを超えると、住民税がかかります。',g(S.juminLine*1e4,c.sho))+
+ w('税金の扶養・配偶者控除(所得62万円)','超えると、配偶者の税金が少しずつ増えます。所得133万円までは配偶者特別控除があります。あなたの手取りは変わりません。',g(62e4,c.sho))+
+ w('所得税がかかり始める(所得104万円〜)','所得が、基礎控除104万円と、払った社会保険料の合計を超えると、所得税がかかります。',c.it>0?'<em class="o">かかっています</em>':g(104e4+c.sh,c.sho))+
+ w('社会保険の扶養('+(S.gross?'売上':'売上 − 経費')+'が'+S.w130+'万円)','これ以上になると、国民健康保険と国民年金を自分で払います。何で判定するかは、配偶者の勤務先の健康保険によってちがいます。',F.fuyo?g(S.w130*1e4,base):'扶養に入っていない場合は関係ありません',!!F.fuyo)+
+ w('個人事業税がかかり始める(利益290万円)','対象の業種で、利益が290万円を超えると、超えた分に'+S.jRate+'%がかかります。',S.jRate>0?g(290e4,c.raw):'対象外(0%)に設定中',S.jRate>0)+
+ w('消費税(売上1,000万円)','売上が1,000万円を超えると、2年後から消費税を納めます。インボイス登録をしている人は、売上にかかわらず納めます。',g(1000e4,c.uri))}
+function rAo(c){if(c.raw<=0)return '<p style="margin:0">売上と経費を入れると、比べられます。</p>';
+ const L=[[0,'白色申告(控除なし)'],[10,'青色申告(10万円控除)'],[55,'青色申告(55万円控除)'],[65,'青色申告(65万円控除)']];
+ const R=L.map(([a,n])=>[a,n,calc(c.uri,c.kei,a*1e4)]),w=R[0][2],b=R[3][2],d=b.net-w.net;
+ return R.map(([a,n,x])=>`<div class="cmpb${a===F.ao?' on':''}"><span>${n}${a===F.ao?'(いま)':''}</span><span>手取り ${yen(x.net)}</span></div>`).join('')+
+ (d>0?`<p style="margin:10px 0 0">白色申告とくらべて、65万円控除の青色申告は、手取りが<b style="color:var(--ac)">年 約${yen(Math.round(d/100)*100)}</b>多くなります。</p><p class="sd">所得税・住民税・国民健康保険料が下がるためです。65万円控除には、複式簿記の帳簿と、e-Taxでの提出が必要です。会計ソフトを使うと、帳簿は自動で複式簿記になります。</p>`:
+ `<p class="sd" style="margin-top:10px">この条件では、青色申告にしても手取りはほとんど変わりません。所得が小さく、もともと税金や保険料がかかっていないためです。</p>`)+
+ (F.fuyo?'<p class="sd">社会保険の扶養の判定では、青色申告特別控除は引けません。税金の扶養(配偶者控除)の判定では、引けます。</p>':'')}
+function rChart(c){const W=360,Ht=210,L=46,R=10,T=14,B=26,x0=0,x1=Math.max(400,Math.ceil(c.raw/1e4/100)*100+100),ys=[],st=x1/150;
+ for(let x=x0;x<=x1;x+=st)ys.push([x,byRaw(x*1e4).net/1e4]);
+ const mx=Math.max(...ys.map(a=>a[1])),mn=Math.min(0,...ys.map(a=>a[1])),sx=x=>L+(x-x0)/(x1-x0)*(W-L-R),sy=y=>T+(1-(y-mn)/(mx-mn||1))*(Ht-T-B);
+ let s=`<svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="利益と手取りのグラフ"><line class="ax" x1="${L}" y1="${Ht-B}" x2="${W-R}" y2="${Ht-B}"/>`;
+ for(let x=x0;x<=x1;x+=x1/4)s+=`<text x="${sx(x)}" y="${Ht-10}" text-anchor="middle">${Math.round(x)}</text>`;
+ [mn,(mn+mx)/2,mx].forEach(v=>s+=`<text x="${L-4}" y="${sy(v)+3}" text-anchor="end">${Math.round(v)}</text>`);
+ const ws=[];if(F.fuyo&&!S.gross)ws.push(S.w130);if(S.jRate>0&&x1>=290)ws.push(290);
+ ws.forEach(v=>s+=`<line class="wl" x1="${sx(v)}" y1="${T}" x2="${sx(v)}" y2="${Ht-B}"/><text x="${sx(v)}" y="${T-3}" text-anchor="middle">${v}</text>`);
+ s+=`<path class="ln" d="${ys.map((a,i)=>(i?'L':'M')+sx(a[0]).toFixed(1)+' '+sy(a[1]).toFixed(1)).join('')}"/>`;
+ const rx=c.raw/1e4;if(rx>=x0&&rx<=x1)s+=`<circle cx="${sx(rx)}" cy="${sy(c.net/1e4)}" r="5" fill="var(--wn)"/>`;
+ return s+'</svg><p class="mut" style="margin:4px 0 0">横軸:利益(売上 − 経費・万円)/縦軸:手取り(万円)。点があなたの位置です。経費の割合は、いまの入力と同じとして計算しています。</p>'}
+function rBe(){const out=[],C=x=>byRaw(x*1e4),N=x=>C(x).net;
+ for(let x=20;x<700;x++){const a=N(x),b=N(x+1);if(b<a-1000){let q=x+1;while(q<700&&N(q)<a)q++;
+   const ca=C(x),cb=C(x+1);out.push([x,q,a-b,ca.inF&&!cb.inF?'f':kiso(ca.sho)!==kiso(cb.sho)?'k':'']);x=q}}
+ const none='<p style="margin:0">この条件では、利益を増やして手取りが減る区間はありません。</p>';
+ const fy=out.filter(o=>o[3]==='f'),ks=out.filter(o=>o[3]==='k');
+ let h=fy.length?fy.slice(0,1).map(([p,q,d])=>`<p style="margin:0 0 4px">利益が<b>${p}万円</b>を超えると、手取りが約${Math.round(d/1e4)}万円減ります。<b>${q}万円</b>まで増やして、やっと元に戻ります。</p><p class="sd" style="margin:0 0 10px">扶養を外れて、国民健康保険と国民年金を自分で払うようになるためです。</p>`).join(''):
+  none+(F.fuyo?'':'<p class="sd">扶養に入っていない人は、最初から国民健康保険と国民年金を払っているので、扶養を外れて手取りが減る、ということがありません。</p>');
+ if(ks.length)h+=ks.slice(0,1).map(([p,q,d])=>`<p style="margin:10px 0 4px">利益が<b>${p}万円</b>を超えるところでも、手取りが約${Math.round(d/1e4)}万円減ります(${q}万円で元に戻ります)。</p><p class="sd" style="margin:0">所得が489万円を超えると、所得税の基礎控除が104万円から67万円に減るためです(2026年分)。</p>`).join('');
+ return h+'<p class="sd">経費の割合は、いまの入力と同じとして計算しています。</p>'}
+function rTable(){let prev=null;const rows=[50,62,80,100,104,120,130,150,180,200,250,300,400,500,600].map(v=>{const c=byRaw(v*1e4),dn=prev!==null&&c.net<prev;prev=c.net;
+ return `<tr class="${dn?'dn':''}"><td>${v}万円${dn?' ↓':''}</td><td>${man(c.sh)}</td><td>${man(c.it+c.rs+c.jg)}</td><td>${man(c.net)}</td></tr>`}).join('');
+ return `<table><tr><th>利益</th><th>国保・年金</th><th>税金</th><th>手取り</th></tr>${rows}</table><p class="mut" style="margin:6px 0 0">利益は「売上 − 経費」です。色つきの行(↓)は、前の行より手取りが減るところです。</p>`}
+
+function render(){const c=cur();$('raw').textContent=yen(c.raw);
+ $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall(c);$('v-ao').innerHTML=rAo(c);
+ $('v-chart').innerHTML=rChart(c);$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
+ for(const k in NAMES)$('s-'+k).hidden=!SH[k]}
+function sync(){$('uri').value=F.uri;$('urir').value=F.uri;$('kei').value=F.kei;$('keir').value=F.kei;$('ao').value=F.ao;
+ document.querySelectorAll('.seg').forEach(g=>g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===F[g.dataset.k])));
+ $('set').innerHTML='<p class="mut" style="margin:10px 0 0">迷ったら、このままで大丈夫です。</p>'+SET.map(g=>`<h3 class="sg">${g.t}</h3><p class="mut" style="margin:0 0 4px;font-size:.8rem">${g.s}</p>`+g.i.map(([k,l,st,d])=>`<div class="si"><div class="srow"><label for="s_${k}" style="margin:0">${l}</label><input type="number" id="s_${k}" data-k="${k}" step="${st}" value="${S[k]}" inputmode="decimal"></div><p class="sd">${d}</p><button type="button" class="rs" data-k="${k}">初期値(${D.S[k]})に戻す</button></div>`).join('')).join('');
+ $('set').querySelectorAll('input').forEach(i=>i.oninput=()=>{S[i.dataset.k]=parseFloat(i.value)||0;render()});
+ $('set').querySelectorAll('.rs').forEach(b=>b.onclick=()=>{const k=b.dataset.k;S[k]=D.S[k];$('s_'+k).value=S[k];render()});
+ $('chips').innerHTML=Object.keys(NAMES).map(k=>`<button type="button" class="chip${SH[k]?' on':''}" data-k="${k}" aria-pressed="${!!SH[k]}">${NAMES[k]}</button>`).join('');
+ $('chips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{SH[b.dataset.k]=SH[b.dataset.k]?0:1;b.classList.toggle('on');b.setAttribute('aria-pressed',!!SH[b.dataset.k]);save();render()})}
+const cap=(v,m)=>Math.min(m,Math.max(0,parseFloat(v)||0));
+$('uri').oninput=e=>{F.uri=cap(e.target.value,2000);$('urir').value=F.uri;render()};
+$('urir').oninput=e=>{F.uri=cap(e.target.value,2000);$('uri').value=F.uri;render()};
+$('kei').oninput=e=>{F.kei=cap(e.target.value,2000);$('keir').value=F.kei;render()};
+$('keir').oninput=e=>{F.kei=cap(e.target.value,2000);$('kei').value=F.kei;render()};
+$('ao').onchange=e=>{F.ao=+e.target.value;render()};
+document.querySelectorAll('.seg').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(!b)return;F[g.dataset.k]=+b.dataset.v;sync();render()});
+$('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync();render()};
+
+(function(){const U='https://zero-kobo.github.io/nenshu-kabe-simulator/kojin/',T='個人事業主・フリーランスの手取りシミュレーター【2026年版】売上と経費から、手取りと扶養のラインがわかる無料ツール',e=encodeURIComponent;
+ const L=[['X','https://twitter.com/intent/tweet?text='+e(T)+'&url='+e(U)+'&hashtags='+e('フリーランス')],['LINE','https://social-plugins.line.me/lineit/share?url='+e(U)],['Threads','https://www.threads.net/intent/post?text='+e(T+' '+U)],['はてブ','https://b.hatena.ne.jp/add?mode=confirm&url='+e(U)+'&title='+e(T)],['Facebook','https://www.facebook.com/sharer/sharer.php?u='+e(U)]];
+ let h=L.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${n}</a>`).join('')+'<button type="button" id="sh_cp">リンクをコピー</button>';
+ if(navigator.share)h='<button type="button" id="sh_nv">共有メニューを開く</button>'+h;
+ $('sh').innerHTML=h;
+ $('sh_cp').onclick=async()=>{const b=$('sh_cp');try{await navigator.clipboard.writeText(U);b.textContent='コピーしました';setTimeout(()=>b.textContent='リンクをコピー',2000)}catch(x){window.prompt('このURLをコピーしてください',U)}};
+ if($('sh_nv'))$('sh_nv').onclick=()=>navigator.share({title:T,url:U}).catch(()=>{});
+})();
+load();sync();render();
+</script>
+</body>
+</html>
