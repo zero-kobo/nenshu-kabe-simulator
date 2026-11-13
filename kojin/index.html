@@ -82,6 +82,29 @@ svg text{fill:var(--mut);font-size:10px}
 .ad-box{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;overflow-x:auto}
 .ad-box:empty{display:none}
 .ad-box::before{content:"PR・" attr(data-title);display:block;font-size:.8rem;color:var(--mut);margin-bottom:8px}
+.sb{background:var(--cd);border-bottom:1px solid var(--ln)}
+.sb div{max-width:640px;margin:0 auto;padding:9px 14px;display:flex;justify-content:space-between;align-items:center}
+.sb a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:700;font-size:.92rem}
+.sb svg{width:26px;height:26px;border-radius:6px}
+.sb span{font-size:.74rem;color:var(--ac);border:1px solid var(--ac);border-radius:99px;padding:1px 9px}
+.card.hero{--on:#fff;background:var(--ac);border-color:var(--ac);color:var(--on);padding:18px 16px}
+@media(prefers-color-scheme:dark){.card.hero{--on:#06201d}}
+.hero h2{color:var(--on);opacity:.85;font-size:.9rem;margin:0 0 2px}
+.hero .big{font-size:2.3rem;letter-spacing:.01em}
+.hero .mut,.hero .sd{color:var(--on);opacity:.9}
+.hero .b{background:rgba(255,255,255,.2);color:var(--on)}.hero .b.w{background:var(--cd);color:var(--wn)}
+.bar{display:flex;height:12px;border-radius:99px;overflow:hidden;margin:14px 0 6px;background:rgba(0,0,0,.15)}
+.bar i{display:block;height:100%}.bar .n{background:var(--on)}.bar .s{background:var(--on);opacity:.55}.bar .t{background:var(--on);opacity:.28}
+.lg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem}.lg span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--on);margin-right:5px}
+.lg .s:before{opacity:.55}.lg .t:before{opacity:.28}
+.pf{display:inline-block;background:var(--acb);color:var(--ac);border-radius:8px;padding:6px 12px;font-size:.9rem;margin-top:10px}
+.jump{display:block;font-size:.82rem;color:var(--ac);margin-top:12px}
+.fx{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ac);color:#fff;box-shadow:0 -2px 10px rgba(0,0,0,.15);transition:transform .2s}
+@media(prefers-color-scheme:dark){.fx{color:#06201d}}
+.fx.off{transform:translateY(110%)}
+.fx a{max-width:640px;margin:0 auto;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-between;align-items:baseline;gap:10px;color:inherit;text-decoration:none}
+.fx small{font-size:.8rem;opacity:.9}.fx b{font-size:1.3rem}.fx em{font-style:normal;font-size:.78rem;opacity:.9}
+body{padding-bottom:56px}
 .bc{font-size:.78rem;color:var(--mut);margin:0 0 6px}.bc a{color:var(--mut)}
 select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
 .cmpb{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--ln);font-size:.92rem}.cmpb:last-of-type{border:0}.cmpb.on{font-weight:700;color:var(--ac)}
@@ -92,6 +115,7 @@ select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln)
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-40QSGNSQEL");</script>
 </head>
 <body>
+<header class="sb"><div><a href="https://zero-kobo.github.io/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#ffc61a"/><g transform="rotate(45 32 32)" fill="#1c2830"><rect x="27.5" y="22" width="9" height="34" rx="4.5"/><circle cx="32" cy="17" r="11.5"/><rect x="28" y="2" width="8" height="14" rx="1.5" fill="#ffc61a"/></g></svg>ちいさなツール工房</a><span>無料・登録不要</span></div></header>
 <div class="wrap">
 <p class="bc"><a href="https://zero-kobo.github.io/">ちいさなツール工房</a> › <a href="../">年収の壁 手取りシミュレーター</a> › 個人事業主・フリーランス版</p>
 <h1>個人事業主・フリーランスの手取りシミュレーター<small>2026年版</small></h1>
@@ -105,19 +129,17 @@ select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln)
  <label for="kei">1年の経費</label>
  <div class="row"><input type="number" id="kei" min="0" max="2000" step="1" inputmode="decimal"><b>万円</b></div>
  <input type="range" id="keir" min="0" max="600" step="1" aria-label="経費スライダー">
- <p class="mut" style="margin:8px 0 0">利益(売上 − 経費):<b id="raw"></b></p>
+ <p class="pf">利益(売上 − 経費) <b id="raw"></b></p>
  <label for="ao">申告の方法</label>
  <select id="ao"><option value="65">青色申告(65万円控除・e-Taxで提出)</option><option value="55">青色申告(55万円控除・紙で提出)</option><option value="10">青色申告(10万円控除・かんたんな帳簿)</option><option value="0">白色申告(控除なし)</option></select>
  <label>配偶者の社会保険の扶養に入っている(入りたい)</label>
  <div class="seg" data-k="fuyo"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ</button></div>
  <label>年齢は40〜64歳(国保に介護分がかかる)</label>
  <div class="seg" data-k="kaigo"><button type="button" data-v="1">はい</button><button type="button" data-v="0">いいえ</button></div>
+ <a class="jump" href="#setbox">国保の料率や、扶養の判定を変えたい人は「詳細設定」へ ›</a>
 </section>
 
-<details class="card"><summary>詳細設定(数字を変える)</summary><div id="set"></div></details>
-<section class="card"><b>表示する項目</b><p class="mut" style="margin:2px 0 8px">いらない項目はタップで非表示にできます。</p><div class="chips" id="chips"></div></section>
-
-<section class="card" id="s-sum"><h2>手取りの目安</h2><div id="v-sum"></div></section>
+<section class="card hero" id="s-sum"><h2>手取りの目安(1年)</h2><div id="v-sum"></div></section>
 <section class="card" id="s-detail"><h2>内訳</h2><div id="v-detail"></div></section>
 <section class="card" id="s-wall"><h2>壁チェック</h2><div id="v-wall"></div></section>
 <section class="card" id="s-ao"><h2>青色申告で、どのくらい変わる?</h2><div id="v-ao"></div></section>
@@ -128,6 +150,9 @@ select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln)
 <section class="card" id="s-table"><h2>利益別の早見表</h2><div class="sc" id="v-table"></div></section>
 <!-- 広告枠2:早見表の下。空の間は自動で非表示 -->
 <div class="ad-box" data-title="確定申告の準備に"></div>
+
+<details class="card" id="setbox"><summary>詳細設定(数字を変える)</summary><div id="set"></div></details>
+<section class="card"><b>表示する項目</b><p class="mut" style="margin:2px 0 8px">いらない項目はタップで非表示にできます。</p><div class="chips" id="chips"></div></section>
 
 <section class="card" id="s-share"><h2>このツールをシェア</h2><div class="sh" id="sh"></div><p class="mut" style="margin:8px 0 0">共有されるのはツールのURLだけです。入力した売上などは含まれません。</p></section>
 
@@ -212,6 +237,8 @@ select{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--ln)
 <p class="note">※概算です。事業所得だけの人の単純計算で、各種の控除、自治体ごとの差、国民健康保険の軽減などは含みません。制度は変わることがあるため、最新の情報は国税庁・日本年金機構・お住まいの自治体などの公式情報で確認してください。(2026年11月時点の制度をもとに作成)</p>
 </div>
 
+<div class="fx off" id="fx"><a href="#s-sum"><small>手取りの目安</small><b id="fxv"></b><em>くわしく ›</em></a></div>
+
 <script>
 const $=id=>document.getElementById(id);
 const D={F:{uri:300,kei:60,ao:65,fuyo:0,kaigo:0},S:{nenkin:21.5,kRate:11,kFlat:5.6,kCap:96,gRate:2.5,gFlat:1.6,gCap:17,juminLine:45,w130:130,gross:0,jRate:5},show:{sum:1,detail:1,wall:1,ao:1,chart:1,be:1,table:0,gloss:1,faq:1,share:1}};
@@ -265,7 +292,7 @@ function rSum(c){const p=c.raw>0?Math.round(c.net/c.raw*1000)/10:0;let b='';
  b+=c.it===0?'<span class="b">所得税:かからない</span>':'<span class="b w">所得税:かかる</span>';
  b+=c.sho<=62e4?'<span class="b">配偶者控除の範囲内</span>':c.sho<=133e4?'<span class="b w">配偶者特別控除の範囲</span>':'';
  if(c.raw<=0)return '<p style="margin:0">売上と経費を入れると、ここに手取りの目安が出ます。</p>';
- return `<div class="big">${yen(c.net)}</div><div class="mut">年間の手取り(月あたり約${yen(c.net/12)}・利益に対して${p}%)</div><div class="badges">${b}</div>`+
+ return `<div class="big">${yen(c.net)}</div><div class="mut">年間の手取り(月あたり約${yen(c.net/12)}・利益に対して${p}%)</div><div class="bar" role="img" aria-label="利益の内訳"><i class="n" style="width:${Math.max(0,c.net)/c.raw*100}%"></i><i class="s" style="width:${c.sh/c.raw*100}%"></i><i class="t" style="width:${(c.it+c.rs+c.jg)/c.raw*100}%"></i></div><div class="lg"><span class="n">手取り ${man(c.net)}</span><span class="s">国保・年金 ${man(c.sh)}</span><span class="t">税金 ${man(c.it+c.rs+c.jg)}</span></div><div class="badges">${b}</div>`+
  (F.fuyo&&!c.inF?'<p class="sd" style="margin-top:10px">扶養の上限を超えているので、国民健康保険と国民年金を自分で払う計算です。</p>':'')}
 function rDetail(c){const r=(a,b,cls='')=>`<tr class="${cls}"><td>${a}</td><td>${b}</td></tr>`;
  return '<table>'+r('売上',yen(c.uri))+r('経費','−'+yen(c.kei))+r('利益(売上 − 経費)',yen(c.raw),'t')+'</table><table style="margin-top:8px">'+
@@ -311,7 +338,7 @@ function rTable(){let prev=null;const rows=[50,62,80,100,104,120,130,150,180,200
  return `<tr class="${dn?'dn':''}"><td>${v}万円${dn?' ↓':''}</td><td>${man(c.sh)}</td><td>${man(c.it+c.rs+c.jg)}</td><td>${man(c.net)}</td></tr>`}).join('');
  return `<table><tr><th>利益</th><th>国保・年金</th><th>税金</th><th>手取り</th></tr>${rows}</table><p class="mut" style="margin:6px 0 0">利益は「売上 − 経費」です。色つきの行(↓)は、前の行より手取りが減るところです。</p>`}
 
-function render(){const c=cur();$('raw').textContent=yen(c.raw);
+function render(){const c=cur();$('raw').textContent=yen(c.raw);$('fxv').textContent=c.raw>0?yen(c.net):'—';
  $('v-sum').innerHTML=rSum(c);$('v-detail').innerHTML=rDetail(c);$('v-wall').innerHTML=rWall(c);$('v-ao').innerHTML=rAo(c);
  $('v-chart').innerHTML=rChart(c);$('v-be').innerHTML=rBe();$('v-table').innerHTML=rTable();
  for(const k in NAMES)$('s-'+k).hidden=!SH[k]}
@@ -340,6 +367,9 @@ $('reset').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}load();sync()
  if($('sh_nv'))$('sh_nv').onclick=()=>navigator.share({title:T,url:U}).catch(()=>{});
 })();
 load();sync();render();
+/* 結果が画面の外にあるときだけ、下に手取りを出す */
+if('IntersectionObserver' in window)new IntersectionObserver(e=>$('fx').classList.toggle('off',e[0].isIntersecting||!SH.sum),{threshold:.15}).observe($('s-sum'));
+document.addEventListener('click',e=>{const a=e.target.closest('a[href="#setbox"]');if(a)$('setbox').open=true});
 </script>
 </body>
 </html>
